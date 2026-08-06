@@ -1,0 +1,7 @@
+# 浏览器页面校验产生的本地临时配置，不应上传到 GitHub Pages。
+.edge-*/
+.chrome-*/
+
+# Python 生成器运行缓存。
+__pycache__/
+*.py[cod]

@@ -1,0 +1,3589 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1e4d4a" />
+    <title>日本12天11晚旅行攻略</title>
+    <style>
+:root {
+  color-scheme: light;
+  --ink: #172321;
+  --muted: #5f6f6b;
+  --paper: #fffdf8;
+  --band: #f2eee5;
+  --line: #ded7c8;
+  --green: #1e4d4a;
+  --green-2: #2f6f65;
+  --coral: #c85e40;
+  --gold: #b3832d;
+  --shadow: 0 14px 32px rgba(30, 44, 42, 0.12);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.hero {
+  min-height: 88svh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.22), transparent 25%),
+    radial-gradient(circle at 88% 22%, rgba(200, 94, 64, 0.35), transparent 26%),
+    linear-gradient(135deg, #173b39 0%, #1e4d4a 42%, #b3832d 100%);
+  isolation: isolate;
+}
+
+.hero__shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.04) 38%, rgba(0, 0, 0, 0.38) 100%),
+    repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 18px);
+  z-index: -1;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: max(18px, env(safe-area-inset-top)) 18px 0;
+  color: #fff;
+}
+
+.brand {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ghost-link {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 13px;
+  background: rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.hero__content {
+  color: #fff;
+  padding: 0 20px 28px;
+  max-width: 780px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(42px, 15vw, 86px);
+  line-height: 0.94;
+  letter-spacing: 0;
+}
+
+.subtitle {
+  max-width: 28rem;
+  margin: 16px 0 18px;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.route-pill {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+main {
+  padding-bottom: 42px;
+}
+
+.quick-band {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.quick-stat {
+  background: #faf6ed;
+  padding: 16px 10px;
+  text-align: center;
+}
+
+.quick-stat strong {
+  display: block;
+  font-size: 25px;
+  color: var(--coral);
+}
+
+.quick-stat span {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.tabs {
+  position: sticky;
+  top: 0;
+  z-index: 8;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 14px;
+  background: rgba(255, 253, 248, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(18px);
+}
+
+.tab {
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--green);
+  border-radius: 999px;
+  padding: 9px 15px;
+  font-weight: 800;
+}
+
+.tab.is-active {
+  color: #fff;
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.toolbar {
+  padding: 14px 16px 4px;
+}
+
+.search {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.search input {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 0 4px;
+}
+
+.chip {
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.chip.is-active {
+  color: #fff;
+  background: var(--coral);
+  border-color: var(--coral);
+}
+
+.content-view {
+  display: none;
+}
+
+.content-view.is-visible {
+  display: block;
+}
+
+.section-head {
+  padding: 22px 18px 10px;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.section-head p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.day-list,
+.simple-list,
+.food-groups {
+  display: grid;
+  gap: 12px;
+  padding: 0 14px 18px;
+}
+
+.day-card,
+.info-card,
+.food-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.day-card summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 16px;
+}
+
+.day-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.day-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.day-kicker,
+.tag {
+  color: var(--coral);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.day-title {
+  margin: 6px 0 0;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.stay {
+  color: var(--green);
+  background: #e7f0ed;
+  border-radius: 999px;
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.anchors {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.day-body {
+  border-top: 1px solid var(--line);
+  padding: 0 16px 16px;
+}
+
+.field {
+  margin-top: 14px;
+}
+
+.field strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--green);
+  font-size: 13px;
+}
+
+.field p {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.detail-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.route-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.route-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 10px;
+  align-items: center;
+  padding: 10px 11px;
+  border: 1px solid #dce8e4;
+  border-radius: 7px;
+  background: #f5faf8;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.route-row:active {
+  background: #e7f0ed;
+}
+
+.route-option {
+  display: inline-block;
+  margin-right: 6px;
+  color: var(--coral);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.route-points {
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.route-time {
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.route-note {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.route-source {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.detail-row {
+  border-left: 3px solid var(--gold);
+  padding: 4px 0 4px 10px;
+}
+
+.info-card,
+.food-card {
+  padding: 15px;
+}
+
+.info-card h3,
+.food-card h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.meta span {
+  border-radius: 999px;
+  padding: 5px 8px;
+  background: #f4efe4;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.food-region {
+  padding: 14px 4px 0;
+  color: var(--green);
+  font-size: 18px;
+}
+
+.food-map-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 10px 0 2px;
+}
+
+.food-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+  padding: 7px 9px;
+  border: 1px solid #cddfda;
+  border-radius: 999px;
+  background: #edf6f3;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.food-map-link:active {
+  background: #dcebe7;
+}
+
+.food-map-note {
+  width: 100%;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.hotel-list {
+  display: grid;
+  gap: 9px;
+  margin-top: 9px;
+}
+
+.hotel-pick {
+  padding: 11px;
+  border: 1px solid #dce8e4;
+  border-radius: 7px;
+  background: #f7faf9;
+}
+
+.hotel-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.hotel-name {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.hotel-budget {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: #f4efe4;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.hotel-area {
+  margin-top: 3px;
+  color: var(--coral);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.hotel-reason {
+  margin: 7px 0 0;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.hotel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 9px;
+}
+
+.hotel-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 9px;
+  border: 1px solid #cddfda;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.hotel-link--route {
+  border-color: var(--green);
+  background: var(--green);
+  color: #fff;
+}
+
+.hotel-location-note {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 24px 18px calc(24px + env(safe-area-inset-bottom));
+  background: var(--green);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 12px;
+}
+
+@media (min-width: 760px) {
+  .hero {
+    min-height: 72vh;
+  }
+
+  .hero__content {
+    padding-left: 7vw;
+    padding-bottom: 7vh;
+  }
+
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .quick-band {
+    border-left: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+  }
+
+  .day-list,
+  .simple-list,
+  .food-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .day-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <header class="hero" id="hero">
+      <div class="hero__shade"></div>
+      <nav class="topbar">
+        <span class="brand">日本旅行</span>
+        <a class="ghost-link" href="#today">行程</a>
+      </nav>
+      <section class="hero__content">
+        <p class="eyebrow" id="tripDates"></p>
+        <h1 id="tripTitle"></h1>
+        <p class="subtitle" id="tripSubtitle"></p>
+        <div class="route-pill" id="tripRoute"></div>
+      </section>
+    </header>
+
+    <main>
+      <section class="quick-band" aria-label="旅行摘要">
+        <div class="quick-stat">
+          <strong>12</strong>
+          <span>天</span>
+        </div>
+        <div class="quick-stat">
+          <strong>8</strong>
+          <span>晚关西</span>
+        </div>
+        <div class="quick-stat">
+          <strong>3</strong>
+          <span>晚东京</span>
+        </div>
+      </section>
+
+      <div class="tabs" role="tablist" aria-label="攻略分类">
+        <button class="tab is-active" data-view="days" type="button">每日</button>
+        <button class="tab" data-view="food" type="button">美食</button>
+        <button class="tab" data-view="lodging" type="button">住宿</button>
+        <button class="tab" data-view="planb" type="button">备选</button>
+        <button class="tab" data-view="prep" type="button">准备</button>
+      </div>
+
+      <section class="toolbar" id="dayToolbar">
+        <label class="search">
+          <span>搜索</span>
+          <input id="searchInput" type="search" placeholder="京都、USJ、抹茶、富士山" />
+        </label>
+        <div class="chips" id="cityChips"></div>
+      </section>
+
+      <section class="content-view is-visible" id="daysView">
+        <div class="section-head" id="today">
+          <h2>每日行程</h2>
+          <p>按当天体力调整，重点行程都留了删减口。</p>
+        </div>
+        <div class="day-list" id="dayList"></div>
+      </section>
+
+      <section class="content-view" id="foodView">
+        <div class="section-head">
+          <h2>美食推荐</h2>
+          <p>按区域找吃的，点击店名可直接进入 Google Maps；排队太长就用备选。</p>
+        </div>
+        <div class="food-groups" id="foodGroups"></div>
+      </section>
+
+      <section class="content-view" id="lodgingView">
+        <div class="section-head">
+          <h2>住宿推荐</h2>
+          <p>按人民币每晚约300–500元筛选；每家都能查看定位，或从你当前所在位置直接规划路线。</p>
+        </div>
+        <div class="simple-list" id="lodgingList"></div>
+      </section>
+
+      <section class="content-view" id="planbView">
+        <div class="section-head">
+          <h2>备选方案</h2>
+          <p>晚点、下雨、人多、富士山看不见时用。</p>
+        </div>
+        <div class="simple-list" id="planbList"></div>
+      </section>
+
+      <section class="content-view" id="prepView">
+        <div class="section-head">
+          <h2>准备清单</h2>
+          <p>预约、交通、证件和行李放在这里。</p>
+        </div>
+        <div class="simple-list" id="transportList"></div>
+        <div class="simple-list" id="checkList"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span id="updatedAt"></span>
+      <span>行程来自本地 Excel · 交通、美食与住宿定位核对 Google Maps</span>
+    </footer>
+
+    <script>
+window.TRIP_DATA = {
+  "trip": {
+    "title": "日本12天11晚",
+    "subtitle": "广州出发 · 关西加强 · 东京收尾",
+    "dates": "2026.09.25 - 2026.10.06",
+    "route": "大阪4晚 → 京都4晚 → 东京3晚"
+  },
+  "days": [
+    {
+      "天数": "Day1",
+      "日期": "2026-09-25",
+      "星期": "周五",
+      "入住": "大阪1/4",
+      "主线": "广州→大阪，落地恢复",
+      "必去锚点": "关西机场、酒店、心斋桥/道顿堀",
+      "P人友好玩法": "落地日只保留吃饭+夜逛。航班晚就直接道顿堀，航班早再加梅田。",
+      "交通重点": "KIX到难波选南海；住梅田选JR/机场巴士",
+      "晚餐/夜间建议": "道顿堀、大阪烧、烧鸟、便利店补给",
+      "短日期": "09-25",
+      "吃法": {
+        "天数": "Day1",
+        "日期": "09-25",
+        "城市": "大阪",
+        "早餐/早午餐": "飞机/机场解决，落地后便利店补水",
+        "午餐": "航班早到可在梅田百货或难波随便吃",
+        "晚餐": "道顿堀大阪烧/烧鸟/拉面",
+        "甜品/咖啡/夜宵": "章鱼烧、Rikuro芝士蛋糕、便利店冰淇淋",
+        "P人吃法": "落地日不预约，看到队伍短的就吃；别为了网红店饿着。"
+      },
+      "细节": [
+        {
+          "日期": "09-25",
+          "城市": "大阪",
+          "时间块": "落地后",
+          "建议安排": "入境、交通卡/现金、酒店放行李，晚上心斋桥/道顿堀",
+          "可替换/删减": "航班晚就删梅田",
+          "为什么这样排": "第一天从广州飞过去，最怕把体力花在交通和景点上。",
+          "注意事项": "心斋桥店铺多在20:00左右收，餐饮更晚"
+        }
+      ],
+      "交通分段": [
+        {
+          "起点": "关西机场 KIX",
+          "终点": "大阪站/梅田",
+          "耗时": "约47分钟",
+          "方式": "公共交通",
+          "方案": "住梅田",
+          "说明": "HARUKA 直达",
+          "地图起点": "Kansai International Airport",
+          "地图终点": "Osaka Station"
+        },
+        {
+          "起点": "关西机场 KIX",
+          "终点": "难波站",
+          "耗时": "约46分钟",
+          "方式": "公共交通",
+          "方案": "住难波",
+          "说明": "南海机场线；特急班次可约42分钟",
+          "地图起点": "Kansai International Airport",
+          "地图终点": "Namba Station Osaka"
+        },
+        {
+          "起点": "大阪站/梅田",
+          "终点": "道顿堀",
+          "耗时": "约19分钟",
+          "方式": "公共交通",
+          "方案": "住梅田",
+          "说明": "御堂筋线到难波后步行",
+          "地图起点": "Osaka Station",
+          "地图终点": "Dotonbori Osaka"
+        },
+        {
+          "起点": "难波站",
+          "终点": "道顿堀",
+          "耗时": "约5分钟",
+          "方式": "步行",
+          "方案": "住难波",
+          "说明": "",
+          "地图起点": "Namba Station Osaka",
+          "地图终点": "Dotonbori Osaka"
+        }
+      ]
+    },
+    {
+      "天数": "Day2",
+      "日期": "2026-09-26",
+      "星期": "周六",
+      "入住": "大阪2/4",
+      "主线": "大阪市区慢玩",
+      "必去锚点": "大阪城公园、梅田、中崎町、心斋桥",
+      "P人友好玩法": "周六不排USJ。上午大阪城，下午梅田/中崎町，晚上回心斋桥，节奏松。",
+      "交通重点": "大阪市内地铁/JR，跟Google Map即可",
+      "晚餐/夜间建议": "梅田百货餐厅层或心斋桥居酒屋",
+      "短日期": "09-26",
+      "吃法": {
+        "天数": "Day2",
+        "日期": "09-26",
+        "城市": "大阪",
+        "早餐/早午餐": "酒店附近咖啡+饭团",
+        "午餐": "梅田阪神/大丸/Kitte Osaka餐饮层",
+        "晚餐": "心斋桥/法善寺横丁：大阪烧、串炸、居酒屋",
+        "甜品/咖啡/夜宵": "中崎町咖啡、道顿堀章鱼烧",
+        "P人吃法": "今天是大阪市区日，适合把想吃的小吃分散着吃。"
+      },
+      "细节": [
+        {
+          "日期": "09-26",
+          "城市": "大阪",
+          "时间块": "上午",
+          "建议安排": "大阪城公园外观+大阪历史博物馆外观/可选入内",
+          "可替换/删减": "只拍天守阁外观",
+          "为什么这样排": "周六市区比USJ更容易调整，且大阪城开阔不憋。",
+          "注意事项": "天守阁入内需看当天开放时间"
+        },
+        {
+          "日期": "09-26",
+          "城市": "大阪",
+          "时间块": "下午",
+          "建议安排": "梅田百货/中崎町咖啡/药妆初买",
+          "可替换/删减": "改黑门市场+难波",
+          "为什么这样排": "先买一轮常用品，后面不用每天背购物任务。",
+          "注意事项": "百货退税排队，别卡关门前"
+        },
+        {
+          "日期": "09-26",
+          "城市": "大阪",
+          "时间块": "晚上",
+          "建议安排": "心斋桥、道顿堀、格力高、居酒屋/大阪烧",
+          "可替换/删减": "若前晚已逛，可改新世界通天阁",
+          "为什么这样排": "大阪晚上才是主场，P人可以临场选吃什么。",
+          "注意事项": "热门店可提前Google Map看排队"
+        }
+      ],
+      "交通分段": [
+        {
+          "起点": "大阪站",
+          "终点": "大阪城",
+          "耗时": "约29分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "含车站至天守阁区域步行",
+          "地图起点": "Osaka Station",
+          "地图终点": "Osaka Castle"
+        },
+        {
+          "起点": "大阪城",
+          "终点": "梅田",
+          "耗时": "约28分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "步行接谷町线",
+          "地图起点": "Osaka Castle",
+          "地图终点": "Umeda Station"
+        },
+        {
+          "起点": "梅田",
+          "终点": "中崎町",
+          "耗时": "约12分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Umeda Station",
+          "地图终点": "Nakazakicho Osaka"
+        },
+        {
+          "起点": "中崎町",
+          "终点": "心斋桥",
+          "耗时": "约19分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "步行至梅田后乘御堂筋线",
+          "地图起点": "Nakazakicho Station",
+          "地图终点": "Shinsaibashi Station"
+        },
+        {
+          "起点": "心斋桥",
+          "终点": "道顿堀",
+          "耗时": "约12分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Shinsaibashi Station",
+          "地图终点": "Dotonbori Osaka"
+        },
+        {
+          "起点": "道顿堀",
+          "终点": "大阪站",
+          "耗时": "约18分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "难波乘御堂筋线",
+          "地图起点": "Dotonbori Osaka",
+          "地图终点": "Osaka Station"
+        }
+      ]
+    },
+    {
+      "天数": "Day3",
+      "日期": "2026-09-27",
+      "星期": "周日",
+      "入住": "大阪3/4",
+      "主线": "姬路+神户一日",
+      "必去锚点": "姬路城、好古园、神户北野/南京町/港湾夜景",
+      "P人友好玩法": "这是关西加量的精华日。上午看姬路城，下午神户吃逛，晚上看港湾灯光。",
+      "交通重点": "大阪/梅田→姬路→三宫/元町→大阪",
+      "晚餐/夜间建议": "神户牛可预约；不想贵就南京町小吃+港湾咖啡",
+      "短日期": "09-27",
+      "吃法": {
+        "天数": "Day3",
+        "日期": "09-27",
+        "城市": "姬路/神户",
+        "早餐/早午餐": "大阪站买饭团/咖啡上车",
+        "午餐": "姬路：穴子饭/姬路关东煮/城下町定食",
+        "晚餐": "神户：神户牛午晚餐套餐，或南京町小吃+港湾咖啡",
+        "甜品/咖啡/夜宵": "神户布丁、港湾甜品",
+        "P人吃法": "预算够就神户牛放午餐，晚餐吃小吃更轻松。"
+      },
+      "细节": [
+        {
+          "日期": "09-27",
+          "城市": "姬路/神户",
+          "时间块": "上午",
+          "建议安排": "大阪出发去姬路城+好古园",
+          "可替换/删减": "只姬路城外观+商店街",
+          "为什么这样排": "姬路城是关西世界遗产级别的城郭景观，值得从大阪加一天。",
+          "注意事项": "城内楼梯陡，穿舒服鞋"
+        },
+        {
+          "日期": "09-27",
+          "城市": "神户",
+          "时间块": "下午",
+          "建议安排": "姬路到神户：北野异人馆/南京町/旧居留地三选二",
+          "可替换/删减": "只南京町+港湾",
+          "为什么这样排": "神户适合作为姬路后的轻松城市收尾，不需要另换酒店。",
+          "注意事项": "神户牛想吃正式店建议预约"
+        },
+        {
+          "日期": "09-27",
+          "城市": "神户",
+          "时间块": "晚上",
+          "建议安排": "Mosaic/Harborland港湾夜景后回大阪",
+          "可替换/删减": "太累就三宫吃完直接回",
+          "为什么这样排": "夜景是神户最稳的记忆点，拍完回大阪睡。",
+          "注意事项": "确认末班车，不要拖到太晚"
+        }
+      ],
+      "交通分段": [
+        {
+          "起点": "大阪站",
+          "终点": "姬路站",
+          "耗时": "约1小时2分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "JR新快速，无需预约",
+          "地图起点": "Osaka Station",
+          "地图终点": "Himeji Station"
+        },
+        {
+          "起点": "姬路站",
+          "终点": "姬路城",
+          "耗时": "约20分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Himeji Station",
+          "地图终点": "Himeji Castle"
+        },
+        {
+          "起点": "姬路城",
+          "终点": "神户三宫",
+          "耗时": "约1小时1分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "含步行回姬路站",
+          "地图起点": "Himeji Castle",
+          "地图终点": "Sannomiya Station Kobe"
+        },
+        {
+          "起点": "三宫站",
+          "终点": "北野异人馆",
+          "耗时": "约16分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "上坡路段",
+          "地图起点": "Sannomiya Station Kobe",
+          "地图终点": "Kitano Ijinkan Kobe"
+        },
+        {
+          "起点": "北野异人馆",
+          "终点": "南京町",
+          "耗时": "约24分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "公交加步行",
+          "地图起点": "Kitano Ijinkan Kobe",
+          "地图终点": "Nankinmachi Kobe"
+        },
+        {
+          "起点": "南京町",
+          "终点": "Harborland",
+          "耗时": "约19分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Nankinmachi Kobe",
+          "地图终点": "Kobe Harborland"
+        },
+        {
+          "起点": "Harborland",
+          "终点": "大阪站",
+          "耗时": "约34分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "从神户站乘JR新快速",
+          "地图起点": "Kobe Harborland",
+          "地图终点": "Osaka Station"
+        }
+      ]
+    },
+    {
+      "天数": "Day4",
+      "日期": "2026-09-28",
+      "星期": "周一",
+      "入住": "大阪4/4",
+      "主线": "USJ环球影城",
+      "必去锚点": "任天堂、哈利波特、巡游、热门项目",
+      "P人友好玩法": "放周一比周末舒服。只锁定3-4个目标项目，不用把项目刷成KPI。",
+      "交通重点": "JR到环球城站；前一晚绑App和门票",
+      "晚餐/夜间建议": "闭园后回梅田/难波吃夜宵",
+      "短日期": "09-28",
+      "吃法": {
+        "天数": "Day4",
+        "日期": "09-28",
+        "城市": "USJ",
+        "早餐/早午餐": "酒店或便利店吃饱再入园",
+        "午餐": "园内餐厅：任天堂/哈利波特/侏罗纪区域按排队选",
+        "晚餐": "闭园后回大阪吃拉面/串炸/便利店夜宵",
+        "甜品/咖啡/夜宵": "黄油啤酒、园区限定甜点",
+        "P人吃法": "园区餐饮核心是补体力，不要把餐厅预约变成压力。"
+      },
+      "细节": [
+        {
+          "日期": "09-28",
+          "城市": "大阪",
+          "时间块": "全天",
+          "建议安排": "USJ：开园前到，先处理任天堂整理券，再按排队选项目",
+          "可替换/删减": "快通预算够就买；胆小党以拍照巡游为主",
+          "为什么这样排": "把USJ放周一，避开周末硬碰硬。",
+          "注意事项": "USJ官网提示营业时间可能调整，出发前再查"
+        }
+      ],
+      "交通分段": [
+        {
+          "起点": "大阪站",
+          "终点": "环球城站",
+          "耗时": "约11分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "大阪环状线接JR梦咲线",
+          "地图起点": "Osaka Station",
+          "地图终点": "Universal City Station Osaka"
+        },
+        {
+          "起点": "环球城站",
+          "终点": "大阪站",
+          "耗时": "约15分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "散场高峰另预留进站时间",
+          "地图起点": "Universal City Station Osaka",
+          "地图终点": "Osaka Station"
+        }
+      ]
+    },
+    {
+      "天数": "Day5",
+      "日期": "2026-09-29",
+      "星期": "周二",
+      "入住": "京都1/4",
+      "主线": "大阪→京都，东山祇园",
+      "必去锚点": "清水寺、三年坂二年坂、八坂神社、祇园、鸭川",
+      "P人友好玩法": "换城日别太满。中午到京都寄存，下午东山，晚上鸭川散步。",
+      "交通重点": "按酒店选JR/阪急/京阪；行李多可直达京都站",
+      "晚餐/夜间建议": "先斗町/河原町/祇园附近",
+      "短日期": "09-29",
+      "吃法": {
+        "天数": "Day5",
+        "日期": "09-29",
+        "城市": "京都",
+        "早餐/早午餐": "大阪退房前简单吃",
+        "午餐": "京都站拉面小路/百货餐厅层",
+        "晚餐": "祇园/先斗町：京料理、天妇罗、居酒屋",
+        "甜品/咖啡/夜宵": "鸭川边咖啡/便利店甜品",
+        "P人吃法": "换城日只预约晚餐；午餐靠车站解决最省脑。"
+      },
+      "细节": [
+        {
+          "日期": "09-29",
+          "城市": "京都",
+          "时间块": "上午",
+          "建议安排": "大阪退房→京都酒店寄存/入住",
+          "可替换/删减": "行李寄京都站",
+          "为什么这样排": "连续4晚京都，不必每天拖箱子，体验会好很多。",
+          "注意事项": "住祇园/河原町可考虑京阪/阪急"
+        },
+        {
+          "日期": "09-29",
+          "城市": "京都",
+          "时间块": "下午",
+          "建议安排": "清水寺→三年坂二年坂→八坂神社",
+          "可替换/删减": "不入清水寺，只走街区",
+          "为什么这样排": "换城日走东山核心线，景点密集，不绕路。",
+          "注意事项": "清水寺坡多，和服配自己的鞋更舒服"
+        },
+        {
+          "日期": "09-29",
+          "城市": "京都",
+          "时间块": "晚上",
+          "建议安排": "祇园白川/花见小路/鸭川/先斗町",
+          "可替换/删减": "只鸭川散步",
+          "为什么这样排": "京都晚上适合慢，不适合赶。",
+          "注意事项": "祇园不要追拍艺伎"
+        }
+      ],
+      "交通分段": [
+        {
+          "起点": "大阪站",
+          "终点": "四条站",
+          "耗时": "约38分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "当前最快路线经京都站换乌丸线；拖箱建议多留10分钟",
+          "地图起点": "Osaka Station",
+          "地图终点": "Shijo Station Kyoto"
+        },
+        {
+          "起点": "四条站",
+          "终点": "清水寺",
+          "耗时": "约29分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "公交加步行；拥堵时可能更久",
+          "地图起点": "Shijo Station Kyoto",
+          "地图终点": "Kiyomizu-dera Kyoto"
+        },
+        {
+          "起点": "清水寺",
+          "终点": "三年坂",
+          "耗时": "约3分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Kiyomizu-dera Kyoto",
+          "地图终点": "Sannenzaka Kyoto"
+        },
+        {
+          "起点": "三年坂",
+          "终点": "八坂神社",
+          "耗时": "约14分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Sannenzaka Kyoto",
+          "地图终点": "Yasaka Shrine Kyoto"
+        },
+        {
+          "起点": "八坂神社",
+          "终点": "祇园白川",
+          "耗时": "约9分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Yasaka Shrine Kyoto",
+          "地图终点": "Gion Shirakawa Kyoto"
+        },
+        {
+          "起点": "祇园白川",
+          "终点": "先斗町",
+          "耗时": "约6分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Gion Shirakawa Kyoto",
+          "地图终点": "Pontocho Alley Kyoto"
+        },
+        {
+          "起点": "先斗町",
+          "终点": "四条站",
+          "耗时": "约15分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Pontocho Alley Kyoto",
+          "地图终点": "Shijo Station Kyoto"
+        }
+      ]
+    },
+    {
+      "天数": "Day6",
+      "日期": "2026-09-30",
+      "星期": "周三",
+      "入住": "京都2/4",
+      "主线": "岚山+京都西北",
+      "必去锚点": "岚山竹林、渡月桥、天龙寺、嵯峨野、金阁寺或龙安寺",
+      "P人友好玩法": "早到岚山避人，午后看体力加金阁寺/龙安寺；累了就只在河边喝咖啡。",
+      "交通重点": "四条乌丸/河原町走阪急很顺；京都站走JR嵯峨野线",
+      "晚餐/夜间建议": "回四条河原町吃饭，别留在岚山太晚",
+      "短日期": "09-30",
+      "吃法": {
+        "天数": "Day6",
+        "日期": "09-30",
+        "城市": "京都岚山",
+        "早餐/早午餐": "早出，便利店饭团+咖啡",
+        "午餐": "岚山汤豆腐/荞麦面/鳗鱼饭按预算选",
+        "晚餐": "回四条河原町吃烧鸟、乌冬或居酒屋",
+        "甜品/咖啡/夜宵": "% Arabica岚山若排队短可喝，不短就跳过",
+        "P人吃法": "岚山餐厅午餐容易排队，11点前后吃更舒服。"
+      },
+      "细节": [
+        {
+          "日期": "09-30",
+          "城市": "京都",
+          "时间块": "清晨-上午",
+          "建议安排": "岚山竹林、天龙寺、渡月桥",
+          "可替换/删减": "只渡月桥+河边",
+          "为什么这样排": "岚山越早越好，晚到基本就是看人。",
+          "注意事项": "竹林拍照要早出"
+        },
+        {
+          "日期": "09-30",
+          "城市": "京都",
+          "时间块": "下午",
+          "建议安排": "嵯峨野小火车/常寂光寺/金阁寺/龙安寺按体力选",
+          "可替换/删减": "删金阁寺，留岚山慢逛",
+          "为什么这样排": "把京都西侧集中一天，避免来回穿城。",
+          "注意事项": "小火车如想坐需提前查票"
+        }
+      ],
+      "交通分段": [
+        {
+          "起点": "四条站",
+          "终点": "阪急岚山站",
+          "耗时": "约18分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "乌丸站乘阪急，桂站换乘",
+          "地图起点": "Shijo Station Kyoto",
+          "地图终点": "Arashiyama Station Hankyu"
+        },
+        {
+          "起点": "阪急岚山站",
+          "终点": "天龙寺",
+          "耗时": "约13分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Arashiyama Station Hankyu",
+          "地图终点": "Tenryu-ji Kyoto"
+        },
+        {
+          "起点": "天龙寺",
+          "终点": "竹林小径",
+          "耗时": "约1–5分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "入口紧邻天龙寺北门",
+          "地图起点": "Tenryu-ji Kyoto",
+          "地图终点": "Arashiyama Bamboo Forest"
+        },
+        {
+          "起点": "竹林小径",
+          "终点": "渡月桥",
+          "耗时": "约13分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Arashiyama Bamboo Forest",
+          "地图终点": "Togetsukyo Bridge"
+        },
+        {
+          "起点": "渡月桥",
+          "终点": "金阁寺",
+          "耗时": "约50分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "公交换乘，候车影响较大",
+          "地图起点": "Togetsukyo Bridge",
+          "地图终点": "Kinkaku-ji Kyoto"
+        },
+        {
+          "起点": "金阁寺",
+          "终点": "龙安寺",
+          "耗时": "约11分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "59路公交加步行",
+          "地图起点": "Kinkaku-ji Kyoto",
+          "地图终点": "Ryoan-ji Kyoto"
+        },
+        {
+          "起点": "龙安寺",
+          "终点": "四条站",
+          "耗时": "约40分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "公交接乌丸线",
+          "地图起点": "Ryoan-ji Kyoto",
+          "地图终点": "Shijo Station Kyoto"
+        }
+      ]
+    },
+    {
+      "天数": "Day7",
+      "日期": "2026-10-01",
+      "星期": "周四",
+      "入住": "京都3/4",
+      "主线": "宇治+奈良完整日",
+      "必去锚点": "宇治平等院/抹茶街、奈良公园、若草山",
+      "P人友好玩法": "国庆第一天游客会变多，尽量早出。宇治买抹茶，奈良重点放若草山。",
+      "交通重点": "京都→宇治→奈良→京都，JR/近铁组合",
+      "晚餐/夜间建议": "回京都吃，奈良不必恋战",
+      "短日期": "10-01",
+      "吃法": {
+        "天数": "Day7",
+        "日期": "10-01",
+        "城市": "宇治/奈良",
+        "早餐/早午餐": "京都出发前轻食",
+        "午餐": "宇治抹茶荞麦/鳗鱼饭/茶寮甜品",
+        "晚餐": "回京都吃，或奈良站附近釜饭/柿叶寿司",
+        "甜品/咖啡/夜宵": "宇治抹茶甜品、中谷堂艾草饼、大佛布丁",
+        "P人吃法": "宇治甜品优先，奈良正餐不执着网红。"
+      },
+      "细节": [
+        {
+          "日期": "10-01",
+          "城市": "宇治/奈良",
+          "时间块": "上午",
+          "建议安排": "京都→宇治，平等院、宇治川、抹茶街，餐厅先取号",
+          "可替换/删减": "只买抹茶+河边",
+          "为什么这样排": "宇治适合国庆第一天做慢一点，不要一早冲奈良人潮。",
+          "注意事项": "热门鳗鱼店排队久，过号就换店"
+        },
+        {
+          "日期": "10-01",
+          "城市": "奈良",
+          "时间块": "下午",
+          "建议安排": "宇治→奈良，奈良公园、若草山、看鹿放空",
+          "可替换/删减": "删东大寺/春日大社",
+          "为什么这样排": "奈良精华不是刷寺，是在若草山把节奏慢下来。",
+          "注意事项": "鹿会抢食，鹿饼不要一次全露"
+        }
+      ],
+      "交通分段": [
+        {
+          "起点": "四条站",
+          "终点": "JR宇治站",
+          "耗时": "约34分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "乌丸线至京都站换JR奈良线",
+          "地图起点": "Shijo Station Kyoto",
+          "地图终点": "Uji Station JR"
+        },
+        {
+          "起点": "JR宇治站",
+          "终点": "平等院",
+          "耗时": "约9分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Uji Station JR",
+          "地图终点": "Byodoin Kyoto"
+        },
+        {
+          "起点": "平等院",
+          "终点": "JR宇治站",
+          "耗时": "约9分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Byodoin Kyoto",
+          "地图终点": "Uji Station JR"
+        },
+        {
+          "起点": "JR宇治站",
+          "终点": "JR奈良站",
+          "耗时": "约44分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "JR奈良线",
+          "地图起点": "Uji Station JR",
+          "地图终点": "Nara Station JR"
+        },
+        {
+          "起点": "JR奈良站",
+          "终点": "奈良公园",
+          "耗时": "约22分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Nara Station JR",
+          "地图终点": "Nara Park"
+        },
+        {
+          "起点": "奈良公园巴士总站",
+          "终点": "若草山北口",
+          "耗时": "约39分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "公园内部范围很大，此段按明确入口核对",
+          "地图起点": "Nara Park Bus Terminal",
+          "地图终点": "若草山登山口 北ゲート"
+        },
+        {
+          "起点": "若草山一带",
+          "终点": "四条站",
+          "耗时": "约1小时21分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "步行至公交站后转近铁/地铁",
+          "地图起点": "Mount Wakakusa",
+          "地图终点": "Shijo Station Kyoto"
+        }
+      ]
+    },
+    {
+      "天数": "Day8",
+      "日期": "2026-10-02",
+      "星期": "周五",
+      "入住": "京都4/4",
+      "主线": "京都近郊慢游/自由修整",
+      "必去锚点": "A贵船鞍马；B大原三千院；C伏见稻荷+锦市场+购物",
+      "P人友好玩法": "这是全程的缓冲日。天气好选山水，累了选伏见稻荷早去+市区慢逛。",
+      "交通重点": "贵船鞍马走叡山电铁；大原走公交；伏见走JR/京阪",
+      "晚餐/夜间建议": "鸭川/先斗町收尾，整理行李",
+      "短日期": "10-02",
+      "吃法": {
+        "天数": "Day8",
+        "日期": "10-02",
+        "城市": "京都近郊",
+        "早餐/早午餐": "酒店附近慢早餐",
+        "午餐": "贵船/鞍马吃荞麦；大原吃乡土定食；伏见吃拉面/酒藏小吃",
+        "晚餐": "锦市场/河原町/先斗町补京都想吃清单",
+        "甜品/咖啡/夜宵": "祇园甜品、抹茶、咖啡",
+        "P人吃法": "这天是缓冲日，按体力决定吃贵一点还是随便舒服吃。"
+      },
+      "细节": [
+        {
+          "日期": "10-02",
+          "城市": "京都",
+          "时间块": "方案A",
+          "建议安排": "贵船神社+鞍马寺，山水散步",
+          "可替换/删减": "下雨或太累不选",
+          "为什么这样排": "这是比热门寺庙更有层次的京都近郊体验。",
+          "注意事项": "有坡和台阶，穿运动鞋"
+        },
+        {
+          "日期": "10-02",
+          "城市": "京都",
+          "时间块": "方案B",
+          "建议安排": "大原三千院+宝泉院，安静庭院线",
+          "可替换/删减": "交通比市区慢",
+          "为什么这样排": "想避开市区人潮，大原比东山更松。",
+          "注意事项": "公交班次需提前看"
+        },
+        {
+          "日期": "10-02",
+          "城市": "京都",
+          "时间块": "方案C",
+          "建议安排": "伏见稻荷早去+锦市场+新京极/寺町购物",
+          "可替换/删减": "最省体力",
+          "为什么这样排": "如果前几天走累，这天就用来回血和补购物。",
+          "注意事项": "伏见稻荷别中午去主参道挤"
+        }
+      ],
+      "交通分段": [
+        {
+          "起点": "四条站",
+          "终点": "贵船口站",
+          "耗时": "约58分钟",
+          "方式": "公共交通",
+          "方案": "方案A 贵船鞍马",
+          "说明": "公交接叡山电铁",
+          "地图起点": "Shijo Station Kyoto",
+          "地图终点": "Kibuneguchi Station"
+        },
+        {
+          "起点": "贵船口站",
+          "终点": "贵船神社",
+          "耗时": "约8分钟",
+          "方式": "公共交通",
+          "方案": "方案A 贵船鞍马",
+          "说明": "33路公交；步行约30分钟",
+          "地图起点": "Kibuneguchi Station",
+          "地图终点": "Kifune Shrine Kyoto"
+        },
+        {
+          "起点": "贵船神社",
+          "终点": "鞍马站",
+          "耗时": "约21分钟",
+          "方式": "公共交通",
+          "方案": "方案A 贵船鞍马",
+          "说明": "公交回贵船口后乘叡山电铁；沿公路步行约43分钟",
+          "地图起点": "Kifune Shrine Kyoto",
+          "地图终点": "Kurama Station Kyoto"
+        },
+        {
+          "起点": "鞍马站",
+          "终点": "四条站",
+          "耗时": "约1小时4分钟",
+          "方式": "公共交通",
+          "方案": "方案A 贵船鞍马",
+          "说明": "叡山电铁接公交/地铁",
+          "地图起点": "Kurama Station Kyoto",
+          "地图终点": "Shijo Station Kyoto"
+        },
+        {
+          "起点": "四条站",
+          "终点": "三千院",
+          "耗时": "约1小时19分钟",
+          "方式": "公共交通",
+          "方案": "方案B 大原",
+          "说明": "直达公交加步行",
+          "地图起点": "Shijo Station Kyoto",
+          "地图终点": "Sanzen-in Kyoto"
+        },
+        {
+          "起点": "三千院",
+          "终点": "宝泉院",
+          "耗时": "约3分钟",
+          "方式": "步行",
+          "方案": "方案B 大原",
+          "说明": "",
+          "地图起点": "Sanzen-in Kyoto",
+          "地图终点": "Hosen-in Kyoto"
+        },
+        {
+          "起点": "宝泉院",
+          "终点": "四条站",
+          "耗时": "约1小时5分钟",
+          "方式": "公共交通",
+          "方案": "方案B 大原",
+          "说明": "步行至大原站乘17路",
+          "地图起点": "Hosen-in Kyoto",
+          "地图终点": "Shijo Station Kyoto"
+        },
+        {
+          "起点": "四条站",
+          "终点": "伏见稻荷",
+          "耗时": "约17分钟",
+          "方式": "公共交通",
+          "方案": "方案C 市区",
+          "说明": "乌丸线至京都站换JR奈良线",
+          "地图起点": "Shijo Station Kyoto",
+          "地图终点": "Fushimi Inari Taisha"
+        },
+        {
+          "起点": "伏见稻荷",
+          "终点": "锦市场",
+          "耗时": "约24分钟",
+          "方式": "公共交通",
+          "方案": "方案C 市区",
+          "说明": "京阪线加步行",
+          "地图起点": "Fushimi Inari Taisha",
+          "地图终点": "Nishiki Market Kyoto"
+        },
+        {
+          "起点": "锦市场",
+          "终点": "新京极",
+          "耗时": "约2分钟",
+          "方式": "步行",
+          "方案": "方案C 市区",
+          "说明": "",
+          "地图起点": "Nishiki Market Kyoto",
+          "地图终点": "Shinkyogoku Shopping Street"
+        },
+        {
+          "起点": "新京极",
+          "终点": "四条站",
+          "耗时": "约14分钟",
+          "方式": "步行",
+          "方案": "方案C 市区",
+          "说明": "",
+          "地图起点": "Shinkyogoku Shopping Street",
+          "地图终点": "Shijo Station Kyoto"
+        }
+      ]
+    },
+    {
+      "天数": "Day9",
+      "日期": "2026-10-03",
+      "星期": "周六",
+      "入住": "东京1/3",
+      "主线": "京都→东京，半日城市夜景",
+      "必去锚点": "新干线、东京塔/六本木或涩谷",
+      "P人友好玩法": "不用赶早班。中午到东京放行李，下午只选一个片区，晚上看夜景。",
+      "交通重点": "京都→东京新干线；建议指定席",
+      "晚餐/夜间建议": "六本木/涩谷/新宿按住宿区域选",
+      "短日期": "10-03",
+      "吃法": {
+        "天数": "Day9",
+        "日期": "10-03",
+        "城市": "京都→东京",
+        "早餐/早午餐": "京都站买便当/咖啡",
+        "午餐": "新干线便当或东京站餐厅",
+        "晚餐": "六本木/涩谷：乌冬、寿司、烧肉或观景餐厅",
+        "甜品/咖啡/夜宵": "涩谷Scramble Square甜品/咖啡",
+        "P人吃法": "换城日餐饮跟交通走，不要为了吃饭跨区。"
+      },
+      "细节": [],
+      "交通分段": [
+        {
+          "起点": "四条站",
+          "终点": "京都站",
+          "耗时": "约4分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "乌丸线；另留进站与找站台时间",
+          "地图起点": "Shijo Station Kyoto",
+          "地图终点": "Kyoto Station"
+        },
+        {
+          "起点": "京都站",
+          "终点": "东京站",
+          "耗时": "约2小时11分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "东海道新干线当前最快班次",
+          "地图起点": "Kyoto Station",
+          "地图终点": "Tokyo Station"
+        },
+        {
+          "起点": "东京站",
+          "终点": "新宿站",
+          "耗时": "约14分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "JR中央线",
+          "地图起点": "Tokyo Station",
+          "地图终点": "Shinjuku Station"
+        },
+        {
+          "起点": "新宿站",
+          "终点": "六本木Hills",
+          "耗时": "约18分钟",
+          "方式": "公共交通",
+          "方案": "夜景A",
+          "说明": "大江户线加步行",
+          "地图起点": "Shinjuku Station",
+          "地图终点": "Roppongi Hills"
+        },
+        {
+          "起点": "六本木Hills",
+          "终点": "新宿站",
+          "耗时": "约17分钟",
+          "方式": "公共交通",
+          "方案": "夜景A",
+          "说明": "",
+          "地图起点": "Roppongi Hills",
+          "地图终点": "Shinjuku Station"
+        },
+        {
+          "起点": "新宿站",
+          "终点": "涩谷十字路口",
+          "耗时": "约8分钟",
+          "方式": "公共交通",
+          "方案": "夜景B",
+          "说明": "JR湘南新宿线；山手线也可",
+          "地图起点": "Shinjuku Station",
+          "地图终点": "Shibuya Scramble Crossing"
+        }
+      ]
+    },
+    {
+      "天数": "Day10",
+      "日期": "2026-10-04",
+      "星期": "周日",
+      "入住": "东京2/3",
+      "主线": "东京市区购物拍照",
+      "必去锚点": "明治神宫、原宿、表参道、涩谷",
+      "P人友好玩法": "周日原宿会热闹，适合逛街但不适合赶路。涩谷SKY约不到就换六本木。",
+      "交通重点": "东京地铁/JR，尽量同片区移动",
+      "晚餐/夜间建议": "涩谷/表参道/新宿",
+      "短日期": "10-04",
+      "吃法": {
+        "天数": "Day10",
+        "日期": "10-04",
+        "城市": "东京",
+        "早餐/早午餐": "明治神宫/原宿前后咖啡",
+        "午餐": "原宿/表参道：蛋包饭、咖啡、轻食",
+        "晚餐": "涩谷：乌冬、拉面、寿司、居酒屋",
+        "甜品/咖啡/夜宵": "蓝瓶/表参道甜品/涩谷PARCO周边",
+        "P人吃法": "东京今天主打逛街，午餐找排队短的，晚餐再认真吃。"
+      },
+      "细节": [],
+      "交通分段": [
+        {
+          "起点": "新宿站",
+          "终点": "明治神宫",
+          "耗时": "约7分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "到参宫桥一带；进入主殿另需步行",
+          "地图起点": "Shinjuku Station",
+          "地图终点": "Meiji Jingu"
+        },
+        {
+          "起点": "明治神宫主殿",
+          "终点": "原宿站",
+          "耗时": "约10分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Meiji Jingu Main Hall",
+          "地图终点": "Harajuku Station"
+        },
+        {
+          "起点": "原宿站",
+          "终点": "表参道站",
+          "耗时": "约13分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Harajuku Station",
+          "地图终点": "Omotesando Station"
+        },
+        {
+          "起点": "表参道站",
+          "终点": "涩谷十字路口",
+          "耗时": "约17分钟",
+          "方式": "步行",
+          "方案": "",
+          "说明": "",
+          "地图起点": "Omotesando Station",
+          "地图终点": "Shibuya Scramble Crossing"
+        },
+        {
+          "起点": "涩谷站",
+          "终点": "新宿站",
+          "耗时": "约7分钟",
+          "方式": "公共交通",
+          "方案": "",
+          "说明": "JR山手线",
+          "地图起点": "Shibuya Station",
+          "地图终点": "Shinjuku Station"
+        }
+      ]
+    },
+    {
+      "天数": "Day11",
+      "日期": "2026-10-05",
+      "星期": "周一",
+      "入住": "东京3/3",
+      "主线": "富士山/镰仓/东京自由三选一",
+      "必去锚点": "A富士山河口湖；B镰仓江之岛；C银座浅草秋叶原",
+      "P人友好玩法": "看天气决定。富士山能见度差就别硬去，镰仓或东京补购物更稳。",
+      "交通重点": "富士山需早出和订巴士/团；镰仓刷交通卡即可",
+      "晚餐/夜间建议": "回东京后简单吃，别安排太晚",
+      "短日期": "10-05",
+      "吃法": {
+        "天数": "Day11",
+        "日期": "10-05",
+        "城市": "东京周边",
+        "早餐/早午餐": "富士山/镰仓早出，车站买早餐",
+        "午餐": "富士山选馎饦面；镰仓选吻仔鱼丼；东京自由日选银座/浅草",
+        "晚餐": "回东京后简单吃，不安排太晚",
+        "甜品/咖啡/夜宵": "镰仓海边咖啡、浅草布丁",
+        "P人吃法": "天气好去富士山吃地方菜；天气差留东京补购物补美食。"
+      },
+      "细节": [],
+      "交通分段": [
+        {
+          "起点": "新宿站",
+          "终点": "河口湖站",
+          "耗时": "约1小时46分钟",
+          "方式": "公共交通",
+          "方案": "方案A 河口湖",
+          "说明": "Busta新宿高速巴士；需预订",
+          "地图起点": "Shinjuku Station",
+          "地图终点": "Kawaguchiko Station"
+        },
+        {
+          "起点": "河口湖站",
+          "终点": "新宿站",
+          "耗时": "约1小时46分钟",
+          "方式": "公共交通",
+          "方案": "方案A 河口湖",
+          "说明": "高速巴士；返程也建议预订",
+          "地图起点": "Kawaguchiko Station",
+          "地图终点": "Shinjuku Station"
+        },
+        {
+          "起点": "新宿站",
+          "终点": "镰仓站",
+          "耗时": "约1小时",
+          "方式": "公共交通",
+          "方案": "方案B 镰仓江之岛",
+          "说明": "JR湘南新宿线",
+          "地图起点": "Shinjuku Station",
+          "地图终点": "Kamakura Station"
+        },
+        {
+          "起点": "镰仓站",
+          "终点": "江之岛站",
+          "耗时": "约25分钟",
+          "方式": "公共交通",
+          "方案": "方案B 镰仓江之岛",
+          "说明": "江之电",
+          "地图起点": "Kamakura Station",
+          "地图终点": "Enoshima Station"
+        },
+        {
+          "起点": "江之岛站",
+          "终点": "新宿站",
+          "耗时": "约1小时19分钟",
+          "方式": "公共交通",
+          "方案": "方案B 镰仓江之岛",
+          "说明": "步行至片濑江之岛后乘小田急",
+          "地图起点": "Enoshima Station",
+          "地图终点": "Shinjuku Station"
+        },
+        {
+          "起点": "新宿站",
+          "终点": "银座站",
+          "耗时": "约15分钟",
+          "方式": "公共交通",
+          "方案": "方案C 东京市区",
+          "说明": "丸之内线",
+          "地图起点": "Shinjuku Station",
+          "地图终点": "Ginza Station"
+        },
+        {
+          "起点": "银座站",
+          "终点": "浅草寺",
+          "耗时": "约20分钟",
+          "方式": "公共交通",
+          "方案": "方案C 东京市区",
+          "说明": "银座线",
+          "地图起点": "Ginza Station",
+          "地图终点": "Senso-ji"
+        },
+        {
+          "起点": "浅草寺",
+          "终点": "秋叶原站",
+          "耗时": "约11分钟",
+          "方式": "公共交通",
+          "方案": "方案C 东京市区",
+          "说明": "步行至筑波快线浅草站",
+          "地图起点": "Senso-ji",
+          "地图终点": "Akihabara Station"
+        },
+        {
+          "起点": "秋叶原站",
+          "终点": "新宿站",
+          "耗时": "约23分钟",
+          "方式": "公共交通",
+          "方案": "方案C 东京市区",
+          "说明": "JR中央·总武线",
+          "地图起点": "Akihabara Station",
+          "地图终点": "Shinjuku Station"
+        }
+      ]
+    },
+    {
+      "天数": "Day12",
+      "日期": "2026-10-06",
+      "星期": "周二",
+      "入住": "退房回广州",
+      "主线": "东京→广州",
+      "必去锚点": "浅草寺/银座/机场伴手礼",
+      "P人友好玩法": "按航班时间只选一个顺路片区。上午能浅草，下午就别再跨城购物。",
+      "交通重点": "成田看上野/东京站；羽田看品川/滨松町/银座",
+      "晚餐/夜间建议": "机场补伴手礼",
+      "短日期": "10-06",
+      "吃法": {
+        "天数": "Day12",
+        "日期": "10-06",
+        "城市": "东京回广州",
+        "早餐/早午餐": "浅草老茶馆/便利店/酒店早餐",
+        "午餐": "看航班，机场或东京站解决",
+        "晚餐": "飞机餐/机场简餐",
+        "甜品/咖啡/夜宵": "机场伴手礼：抹茶饼干、芝士点心、黄油曲奇",
+        "P人吃法": "回程日不要排需要等位的店，机场购物更稳。"
+      },
+      "细节": [],
+      "交通分段": [
+        {
+          "起点": "新宿站",
+          "终点": "浅草寺",
+          "耗时": "约30分钟",
+          "方式": "公共交通",
+          "方案": "上午选浅草",
+          "说明": "中央线接银座线",
+          "地图起点": "Shinjuku Station",
+          "地图终点": "Senso-ji"
+        },
+        {
+          "起点": "浅草寺",
+          "终点": "成田机场",
+          "耗时": "约1小时12分钟",
+          "方式": "公共交通",
+          "方案": "浅草→成田",
+          "说明": "浅草线/京成线；另留值机时间",
+          "地图起点": "Senso-ji",
+          "地图终点": "Narita International Airport"
+        },
+        {
+          "起点": "浅草寺",
+          "终点": "羽田T3",
+          "耗时": "约40分钟",
+          "方式": "公共交通",
+          "方案": "浅草→羽田",
+          "说明": "浅草线直通；另留值机时间",
+          "地图起点": "Senso-ji",
+          "地图终点": "Haneda Airport Terminal 3"
+        },
+        {
+          "起点": "新宿站",
+          "终点": "银座站",
+          "耗时": "约15分钟",
+          "方式": "公共交通",
+          "方案": "上午选银座",
+          "说明": "丸之内线",
+          "地图起点": "Shinjuku Station",
+          "地图终点": "Ginza Station"
+        },
+        {
+          "起点": "银座站",
+          "终点": "成田机场",
+          "耗时": "约1小时13分钟",
+          "方式": "公共交通",
+          "方案": "银座→成田",
+          "说明": "当前推荐为机场巴士；另留值机时间",
+          "地图起点": "Ginza Station",
+          "地图终点": "Narita International Airport"
+        },
+        {
+          "起点": "银座站",
+          "终点": "羽田T3",
+          "耗时": "约25分钟",
+          "方式": "公共交通",
+          "方案": "银座→羽田",
+          "说明": "有乐町换山手线及东京单轨；另留值机时间",
+          "地图起点": "Ginza Station",
+          "地图终点": "Haneda Airport Terminal 3"
+        }
+      ]
+    }
+  ],
+  "foodMap": [
+    {
+      "区域": "大阪难波/道顿堀",
+      "类型": "大阪烧",
+      "推荐店/吃法": "美津の、味乃家、千房/Chibo，或任一排队短的铁板大阪烧",
+      "适合日期": "Day1/Day2",
+      "预算感": "中",
+      "预约/排队": "热门店排队明显，不能预约就错峰",
+      "点单建议": "猪肉大阪烧、摩登烧、海鲜大阪烧",
+      "P人备选": "不想排就去百货餐饮层或地下街大阪烧店",
+      "地图店铺": [
+        {
+          "店名": "美津の",
+          "地图查询": "Mizuno Okonomiyaki Dotonbori Osaka",
+          "定位说明": ""
+        },
+        {
+          "店名": "味乃家本店",
+          "地图查询": "Ajinoya Honten Osaka",
+          "定位说明": ""
+        },
+        {
+          "店名": "千房道顿堀",
+          "地图查询": "Chibo Dotonbori Building",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "大阪难波/道顿堀",
+      "类型": "章鱼烧",
+      "推荐店/吃法": "道顿堀くくる、十八番，适合边逛边吃",
+      "适合日期": "Day1/Day2",
+      "预算感": "低",
+      "预约/排队": "基本排队快",
+      "点单建议": "原味、葱花、明石烧风味",
+      "P人备选": "看到现烤且队伍短的摊就买",
+      "地图店铺": [
+        {
+          "店名": "道顿堀くくる",
+          "地图查询": "Dotonbori Kukuru Konamon Museum",
+          "定位说明": ""
+        },
+        {
+          "店名": "十八番道顿堀店",
+          "地图查询": "Takoyaki Juhachiban Dotonbori",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "大阪新世界/难波",
+      "类型": "串炸",
+      "推荐店/吃法": "串かつだるま或新世界串炸店",
+      "适合日期": "Day2/Day4",
+      "预算感": "低-中",
+      "预约/排队": "晚餐高峰排队",
+      "点单建议": "牛肉、虾、莲藕、山药、芝士",
+      "P人备选": "太累就便利店+拉面，不强行去新世界",
+      "地图店铺": [
+        {
+          "店名": "串かつだるま新世界总本店",
+          "地图查询": "Kushikatsu Daruma Shinsekai Sohonten",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "大阪梅田",
+      "类型": "百货美食",
+      "推荐店/吃法": "阪神百货、大丸梅田、KITTE Osaka餐饮层",
+      "适合日期": "Day2",
+      "预算感": "中",
+      "预约/排队": "比网红单店更灵活",
+      "点单建议": "寿司、炸猪排、洋食、甜品都可",
+      "P人备选": "雨天/选择困难时直接进商场",
+      "地图店铺": [
+        {
+          "店名": "阪神百货梅田本店",
+          "地图查询": "Hanshin Department Store Umeda Main Store",
+          "定位说明": ""
+        },
+        {
+          "店名": "KITTE Osaka",
+          "地图查询": "KITTE Osaka",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "大阪梅田/天满",
+      "类型": "寿司/居酒屋",
+      "推荐店/吃法": "天满、梅田地下街找本地人多的小店",
+      "适合日期": "Day2",
+      "预算感": "中",
+      "预约/排队": "小店可能只日文菜单",
+      "点单建议": "刺身、烤物、炸物分着点",
+      "P人备选": "语言压力大就选商场餐厅",
+      "地图店铺": [
+        {
+          "店名": "春驹本店",
+          "地图查询": "Harukoma Honten Osaka",
+          "定位说明": ""
+        },
+        {
+          "店名": "寿司酒场さしす梅田",
+          "地图查询": "Sushi Sakaba Sashisu Umeda",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "大阪全城",
+      "类型": "芝士蛋糕/甜品",
+      "推荐店/吃法": "Rikuro老爷爷芝士蛋糕、便利店甜品",
+      "适合日期": "Day1-Day4",
+      "预算感": "低",
+      "预约/排队": "热门柜台会排但流动快",
+      "点单建议": "现烤芝士蛋糕适合带回酒店",
+      "P人备选": "机场/车站也可补甜品",
+      "地图店铺": [
+        {
+          "店名": "Rikuro老爷爷难波本店",
+          "地图查询": "Rikuro Ojisan no Mise Namba Main Store",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "姬路",
+      "类型": "当地午餐",
+      "推荐店/吃法": "穴子饭、姬路关东煮、城下町定食",
+      "适合日期": "Day3",
+      "预算感": "中",
+      "预约/排队": "姬路城周边午餐高峰排队",
+      "点单建议": "穴子饭更有地方感",
+      "P人备选": "不想找店就姬路站商场解决",
+      "地图店铺": [
+        {
+          "店名": "柊 穴子料理",
+          "地图查询": "Anago Restaurant Hiiragi Himeji",
+          "定位说明": ""
+        },
+        {
+          "店名": "姬路おでん能古",
+          "地图查询": "Himeji Oden Nodaya",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "神户三宫/元町",
+      "类型": "神户牛",
+      "推荐店/吃法": "Steakland、Mouriya、Wakkoqu等午餐套餐优先",
+      "适合日期": "Day3",
+      "预算感": "中-高",
+      "预约/排队": "正式店建议预约；午餐比晚餐划算",
+      "点单建议": "点午餐套餐，预算友好很多",
+      "P人备选": "不吃神户牛就南京町小吃+洋食",
+      "地图店铺": [
+        {
+          "店名": "Steakland Kobe-kan",
+          "地图查询": "Steakland Kobe-kan",
+          "定位说明": ""
+        },
+        {
+          "店名": "Mouriya本店",
+          "地图查询": "Mouriya Honten Kobe",
+          "定位说明": ""
+        },
+        {
+          "店名": "Wakkoqu新神户",
+          "地图查询": "Wakkoqu Shin-Kobe",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "神户南京町",
+      "类型": "小吃",
+      "推荐店/吃法": "肉包、煎饺、小笼包、可乐饼",
+      "适合日期": "Day3",
+      "预算感": "低-中",
+      "预约/排队": "边走边买，排队可跳过",
+      "点单建议": "少量多样，别一次买太饱",
+      "P人备选": "港湾夜景前垫肚子很合适",
+      "地图店铺": [
+        {
+          "店名": "老祥记",
+          "地图查询": "Roushouki Kobe Nankinmachi",
+          "定位说明": ""
+        },
+        {
+          "店名": "YUNYUN",
+          "地图查询": "YUNYUN Kobe Nankinmachi",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "神户港湾",
+      "类型": "甜品/咖啡",
+      "推荐店/吃法": "Harborland/Mosaic商场咖啡甜品",
+      "适合日期": "Day3",
+      "预算感": "中",
+      "预约/排队": "不用预约",
+      "点单建议": "看夜景前后休息",
+      "P人备选": "太累就三宫站内吃完回大阪",
+      "地图店铺": [
+        {
+          "店名": "Kobe Harborland umie MOSAIC",
+          "地图查询": "Kobe Harborland umie MOSAIC",
+          "定位说明": "商场内可现场选择咖啡和甜品"
+        }
+      ]
+    },
+    {
+      "区域": "USJ",
+      "类型": "园区餐",
+      "推荐店/吃法": "任天堂餐厅、三把扫帚、侏罗纪/大白鲨周边快餐",
+      "适合日期": "Day4",
+      "预算感": "中-高",
+      "预约/排队": "任天堂餐厅通常要尽早处理；热门餐点排队",
+      "点单建议": "以坐下休息为核心，不要只追限定",
+      "P人备选": "带水杯，饭点错峰吃",
+      "地图店铺": [
+        {
+          "店名": "Kinopio's Cafe",
+          "地图查询": "Kinopios Cafe Universal Studios Japan",
+          "定位说明": ""
+        },
+        {
+          "店名": "Three Broomsticks",
+          "地图查询": "Three Broomsticks Universal Studios Japan",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "京都祇园/东山",
+      "类型": "京料理/天妇罗",
+      "推荐店/吃法": "祇园天ぷら八坂圓堂，预算够可预约",
+      "适合日期": "Day5/Day8",
+      "预算感": "高",
+      "预约/排队": "建议提前预约",
+      "点单建议": "午餐套餐比晚餐轻松",
+      "P人备选": "预算一般就先斗町/河原町居酒屋",
+      "地图店铺": [
+        {
+          "店名": "祇园天ぷら八坂圓堂",
+          "地图查询": "Gion Tempura Endo Yasaka Kyoto",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "京都先斗町/木屋町",
+      "类型": "居酒屋/京味小菜",
+      "推荐店/吃法": "Obanzai小菜、烧鸟、豆腐料理",
+      "适合日期": "Day5/Day8",
+      "预算感": "中",
+      "预约/排队": "小店建议早点去",
+      "点单建议": "点季节小菜、烤鱼、豆腐、清酒",
+      "P人备选": "看菜单压力大就选有图片菜单的店",
+      "地图店铺": [
+        {
+          "店名": "Pontocho Robin",
+          "地图查询": "Pontocho Robin Kyoto",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "京都清水寺周边",
+      "类型": "小吃甜品",
+      "推荐店/吃法": "三年坂二年坂抹茶、团子、豆乳甜品",
+      "适合日期": "Day5",
+      "预算感": "低-中",
+      "预约/排队": "热门店排队但可跳过",
+      "点单建议": "少量买，不然上坡很撑",
+      "P人备选": "把正餐留到河原町更稳",
+      "地图店铺": [
+        {
+          "店名": "MACCHA HOUSE清水产宁坂",
+          "地图查询": "MACCHA HOUSE Kyoto Kiyomizu Sannenzaka",
+          "定位说明": ""
+        },
+        {
+          "店名": "伊藤久右卫门清水坂店",
+          "地图查询": "Itoh Kyuemon Kiyomizu-saka Store",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "京都岚山",
+      "类型": "汤豆腐/荞麦",
+      "推荐店/吃法": "岚山汤豆腐、荞麦面、河边咖啡",
+      "适合日期": "Day6",
+      "预算感": "中-高",
+      "预约/排队": "午餐高峰排队，11点前后更好",
+      "点单建议": "汤豆腐适合想吃清淡的人",
+      "P人备选": "排队长就吃荞麦/乌冬快餐",
+      "地图店铺": [
+        {
+          "店名": "松籁庵",
+          "地图查询": "Shoraian Arashiyama Kyoto",
+          "定位说明": ""
+        },
+        {
+          "店名": "岚山よしむら",
+          "地图查询": "Arashiyama Yoshimura Kyoto",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "京都岚山",
+      "类型": "咖啡",
+      "推荐店/吃法": "% Arabica岚山店或河边咖啡",
+      "适合日期": "Day6",
+      "预算感": "中",
+      "预约/排队": "网红店队伍长就跳过",
+      "点单建议": "拿铁/咖啡外带到河边",
+      "P人备选": "任何河边咖啡都能替代",
+      "地图店铺": [
+        {
+          "店名": "% ARABICA京都岚山",
+          "地图查询": "% ARABICA Kyoto Arashiyama",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "京都站",
+      "类型": "拉面/车站餐",
+      "推荐店/吃法": "京都拉面小路、伊势丹/Porta餐饮层",
+      "适合日期": "Day5/Day9",
+      "预算感": "中",
+      "预约/排队": "饭点排队但选择多",
+      "点单建议": "不确定吃什么就去车站餐饮层",
+      "P人备选": "换城日最省心",
+      "地图店铺": [
+        {
+          "店名": "京都拉面小路",
+          "地图查询": "Kyoto Ramen Koji",
+          "定位说明": ""
+        },
+        {
+          "店名": "Kyoto Porta Dining",
+          "地图查询": "Kyoto Porta Dining",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "宇治",
+      "类型": "抹茶正餐/甜品",
+      "推荐店/吃法": "中村藤吉、伊藤久右卫门、通圆茶屋等茶寮",
+      "适合日期": "Day7",
+      "预算感": "中",
+      "预约/排队": "名店会排队，先取号再逛",
+      "点单建议": "抹茶芭菲、抹茶荞麦、茶冻",
+      "P人备选": "宇治随便一家老茶铺都不太会踩雷",
+      "地图店铺": [
+        {
+          "店名": "中村藤吉本店",
+          "地图查询": "Nakamura Tokichi Honten Uji",
+          "定位说明": ""
+        },
+        {
+          "店名": "伊藤久右卫门宇治本店",
+          "地图查询": "Itoh Kyuemon Uji Honten",
+          "定位说明": ""
+        },
+        {
+          "店名": "通圆茶屋本店",
+          "地图查询": "Tsuen Tea Uji",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "宇治",
+      "类型": "鳗鱼/京料理",
+      "推荐店/吃法": "宇治川沿线鳗鱼饭或京料理店",
+      "适合日期": "Day7",
+      "预算感": "中-高",
+      "预约/排队": "热门店排队，别死等",
+      "点单建议": "鳗鱼饭、天妇罗定食",
+      "P人备选": "排队过久就改抹茶甜品+奈良早走",
+      "地图店铺": [
+        {
+          "店名": "京・宇治 抹茶料理辰巳屋",
+          "地图查询": "Kyo-Uji Shunsai Tatsumiya",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "奈良",
+      "类型": "小吃",
+      "推荐店/吃法": "中谷堂艾草饼、大佛布丁、柿叶寿司",
+      "适合日期": "Day7",
+      "预算感": "低-中",
+      "预约/排队": "中谷堂可能围观人多",
+      "点单建议": "艾草饼现吃，布丁可当伴手礼",
+      "P人备选": "正餐回京都吃也完全可以",
+      "地图店铺": [
+        {
+          "店名": "中谷堂",
+          "地图查询": "Nakatanidou Nara",
+          "定位说明": ""
+        },
+        {
+          "店名": "大佛布丁梦风广场店",
+          "地图查询": "Mahoroba Daibutsu Purin Yumekaze Square Nara",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "奈良",
+      "类型": "正餐",
+      "推荐店/吃法": "釜饭、柿叶寿司、奈良站商场定食",
+      "适合日期": "Day7",
+      "预算感": "中",
+      "预约/排队": "热门釜饭店等位久",
+      "点单建议": "如果想吃釜饭要早点排",
+      "P人备选": "赶时间就买柿叶寿司带走",
+      "地图店铺": [
+        {
+          "店名": "志津香公园店",
+          "地图查询": "Shizuka Park Store Nara",
+          "定位说明": ""
+        },
+        {
+          "店名": "平宗奈良店",
+          "地图查询": "Hiraso Nara Store",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "贵船/鞍马",
+      "类型": "山里午餐",
+      "推荐店/吃法": "荞麦、山菜料理、简餐",
+      "适合日期": "Day8方案A",
+      "预算感": "中",
+      "预约/排队": "选择少，旺季需提前看",
+      "点单建议": "热荞麦/冷荞麦按天气选",
+      "P人备选": "带一点零食，别饿着爬坡",
+      "地图店铺": [
+        {
+          "店名": "贵船ひろ文",
+          "地图查询": "Kibune Hirobun Kyoto",
+          "定位说明": ""
+        },
+        {
+          "店名": "贵船伝兵衛",
+          "地图查询": "Kibune Denbei Kyoto",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "大原",
+      "类型": "乡土料理",
+      "推荐店/吃法": "三千院周边味噌、紫苏、豆腐定食",
+      "适合日期": "Day8方案B",
+      "预算感": "中",
+      "预约/排队": "店少，别太晚吃午餐",
+      "点单建议": "乡土定食更稳",
+      "P人备选": "回京都市区再吃正餐",
+      "地图店铺": [
+        {
+          "店名": "志野 松门",
+          "地图查询": "Shino Shoumon Ohara Kyoto",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "伏见/京都市区",
+      "类型": "清酒/拉面/市场",
+      "推荐店/吃法": "伏见酒藏小吃、锦市场、新京极/寺町餐厅",
+      "适合日期": "Day8方案C",
+      "预算感": "低-中",
+      "预约/排队": "锦市场边走边吃，人多就撤",
+      "点单建议": "清酒试饮量力而行",
+      "P人备选": "下雨天最适合这一套",
+      "地图店铺": [
+        {
+          "店名": "鸟せい本店",
+          "地图查询": "Torisei Honten Fushimi Kyoto",
+          "定位说明": ""
+        },
+        {
+          "店名": "锦市场",
+          "地图查询": "Nishiki Market Kyoto",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "东京涩谷",
+      "类型": "乌冬/夜景餐",
+      "推荐店/吃法": "TsuruTonTan涩谷Scramble Square，或同楼餐厅",
+      "适合日期": "Day9/Day10",
+      "预算感": "中",
+      "预约/排队": "窗边位建议预约或早点去",
+      "点单建议": "寿喜烧乌冬、明太子奶油乌冬",
+      "P人备选": "涩谷SKY没票时可用餐厅看景替代",
+      "地图店铺": [
+        {
+          "店名": "TsuruTonTan涩谷",
+          "地图查询": "TsuruTonTan Shibuya Scramble Square",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "东京原宿/表参道",
+      "类型": "逛街午餐",
+      "推荐店/吃法": "蛋包饭、咖啡、轻食、表参道商场餐厅",
+      "适合日期": "Day10",
+      "预算感": "中",
+      "预约/排队": "周日排队多，看到长队就换",
+      "点单建议": "午餐别吃太重，下午还要逛",
+      "P人备选": "便利店饭团+咖啡也很东京",
+      "地图店铺": [
+        {
+          "店名": "Maisen青山本店",
+          "地图查询": "Tonkatsu Maisen Aoyama Honten",
+          "定位说明": ""
+        },
+        {
+          "店名": "bills表参道",
+          "地图查询": "bills Omotesando",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "东京浅草",
+      "类型": "老派早餐/甜品",
+      "推荐店/吃法": "ginza brazil、浅草布丁、草莓大福、抹茶可丽饼",
+      "适合日期": "Day12/Day11东京自由",
+      "预算感": "低-中",
+      "预约/排队": "回程日不要排长队",
+      "点单建议": "浅草寺后顺路买",
+      "P人备选": "航班早就机场吃",
+      "地图店铺": [
+        {
+          "店名": "Ginza Brazil",
+          "地图查询": "Ginza Brazil Asakusa",
+          "定位说明": ""
+        },
+        {
+          "店名": "浅草Silk Pudding",
+          "地图查询": "Asakusa Silk Pudding",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "东京银座/东京站",
+      "类型": "购物日餐饮",
+      "推荐店/吃法": "百货餐厅层、地下食品街、寿司/炸猪排/洋食",
+      "适合日期": "Day11/Day12",
+      "预算感": "中-高",
+      "预约/排队": "比街边网红店更稳",
+      "点单建议": "按楼层导览选，不跨区",
+      "P人备选": "返程前最适合商场餐",
+      "地图店铺": [
+        {
+          "店名": "根室花丸 KITTE丸之内",
+          "地图查询": "Nemuro Hanamaru KITTE Marunouchi",
+          "定位说明": ""
+        },
+        {
+          "店名": "六厘舍 东京拉面街",
+          "地图查询": "Rokurinsha Tokyo Station",
+          "定位说明": ""
+        },
+        {
+          "店名": "银座 篝本店",
+          "地图查询": "Ginza Kagari Honten",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "河口湖",
+      "类型": "地方菜",
+      "推荐店/吃法": "馎饦面、湖边咖啡、富士山造型甜品",
+      "适合日期": "Day11富士山",
+      "预算感": "中",
+      "预约/排队": "一日游时间紧，不要排太久",
+      "点单建议": "馎饦面热乎抗疲劳",
+      "P人备选": "报团就跟团餐/便利店更稳",
+      "地图店铺": [
+        {
+          "店名": "ほうとう不动 河口湖站前店",
+          "地图查询": "Houtou Fudou Kawaguchiko Station",
+          "定位说明": ""
+        },
+        {
+          "店名": "甲州ほうとう小作 河口湖店",
+          "地图查询": "Kosaku Kawaguchiko",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "镰仓/江之岛",
+      "类型": "海边饭",
+      "推荐店/吃法": "吻仔鱼丼、海鲜丼、江之岛章鱼仙贝、海边咖啡",
+      "适合日期": "Day11镰仓",
+      "预算感": "中",
+      "预约/排队": "日落前餐厅会忙",
+      "点单建议": "吻仔鱼丼是镰仓江之岛代表",
+      "P人备选": "天气阴就小町通小吃+早回东京",
+      "地图店铺": [
+        {
+          "店名": "秋本",
+          "地图查询": "Akimoto Kamakura",
+          "定位说明": ""
+        },
+        {
+          "店名": "とびっちょ江之岛本店",
+          "地图查询": "Tobiccho Enoshima",
+          "定位说明": ""
+        },
+        {
+          "店名": "bills七里滨",
+          "地图查询": "bills Shichirigahama",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "机场/伴手礼",
+      "类型": "伴手礼",
+      "推荐店/吃法": "抹茶饼干、Tokyo Milk Cheese Factory、黄油曲奇、芝士卷",
+      "适合日期": "Day12",
+      "预算感": "中",
+      "预约/排队": "机场热门柜台可能断货",
+      "点单建议": "先买必带，再逛免税",
+      "P人备选": "不把所有伴手礼压到机场",
+      "地图店铺": [
+        {
+          "店名": "Tokyo Milk Cheese Factory羽田机场",
+          "地图查询": "Tokyo Milk Cheese Factory Haneda Airport",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "大阪福岛",
+      "类型": "拉面",
+      "推荐店/吃法": "燃えよ麺助：鸭肉/贝类系拉面，适合从梅田步行或坐一站去吃",
+      "适合日期": "Day2/Day4",
+      "预算感": "低-中",
+      "预约/排队": "不能预约，常排队；开门前或午后错峰",
+      "点单建议": "鸭出汁酱油拉面、贝类盐味拉面",
+      "P人备选": "队伍太长就回梅田地下街吃拉面",
+      "地图店铺": [
+        {
+          "店名": "燃えよ麺助",
+          "地图查询": "Moeyo Mensuke Osaka",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "大阪中央市场",
+      "类型": "寿司",
+      "推荐店/吃法": "Endo Sushi中央市场店：传统抓握寿司，适合愿意早起的人",
+      "适合日期": "Day2",
+      "预算感": "中",
+      "预约/排队": "早市型店铺，出发前确认营业日与结束时间",
+      "点单建议": "先点一盘综合寿司，不够再加",
+      "P人备选": "不早起就改梅田春驹或寿司酒场",
+      "地图店铺": [
+        {
+          "店名": "Endo Sushi中央市场店",
+          "地图查询": "Endo Sushi Central Market Osaka",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "大阪心斋桥",
+      "类型": "精品咖啡",
+      "推荐店/吃法": "LiLo Coffee Roasters：逛心斋桥时顺路补一杯",
+      "适合日期": "Day1/Day2",
+      "预算感": "低-中",
+      "预约/排队": "无需预约，座位不多",
+      "点单建议": "手冲或拿铁，豆子可作轻便伴手礼",
+      "P人备选": "满座就外带继续逛",
+      "地图店铺": [
+        {
+          "店名": "LiLo Coffee Roasters",
+          "地图查询": "LiLo Coffee Roasters Osaka",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "姬路站周边",
+      "类型": "乌冬",
+      "推荐店/吃法": "Menme：手打乌冬，适合作为姬路城往返途中的午餐",
+      "适合日期": "Day3",
+      "预算感": "低-中",
+      "预约/排队": "店面不大，午餐时段可能排队",
+      "点单建议": "冷乌冬更显筋道，天气凉则选热汤乌冬",
+      "P人备选": "赶车就改姬路站内定食",
+      "地图店铺": [
+        {
+          "店名": "Menme",
+          "地图查询": "Menme Himeji Udon",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "神户三宫",
+      "类型": "神户洋食",
+      "推荐店/吃法": "Grill Ippei：不吃高价神户牛时，可选蛋包饭、炸虾等老派洋食",
+      "适合日期": "Day3",
+      "预算感": "中",
+      "预约/排队": "饭点可能等位，适合提前或延后吃",
+      "点单建议": "蛋包饭、炸虾、汉堡排",
+      "P人备选": "等位太久就去南京町少量多吃",
+      "地图店铺": [
+        {
+          "店名": "Grill Ippei三宫",
+          "地图查询": "Grill Ippei Sannomiya Kobe",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "京都银阁寺",
+      "类型": "乌冬",
+      "推荐店/吃法": "Omen银阁寺本店：蔬菜配料丰富，口味清爽",
+      "适合日期": "Day8自由调整",
+      "预算感": "中",
+      "预约/排队": "热门时段会排队，开门前后更稳",
+      "点单建议": "招牌Omen乌冬",
+      "P人备选": "不去银阁寺则无需专程跨城",
+      "地图店铺": [
+        {
+          "店名": "Omen银阁寺本店",
+          "地图查询": "Omen Ginkakuji Kyoto",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "京都冈崎",
+      "类型": "乌冬",
+      "推荐店/吃法": "山元麺蔵：高人气手打乌冬，只适合愿意为一餐留时间的人",
+      "适合日期": "Day5/Day8",
+      "预算感": "中",
+      "预约/排队": "规则可能调整，出发前看地图页最新公告",
+      "点单建议": "牛蒡天妇罗乌冬",
+      "P人备选": "不为网红店打乱当天东山动线",
+      "地图店铺": [
+        {
+          "店名": "山元麺蔵",
+          "地图查询": "Yamamoto Menzou Kyoto",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "京都市中心",
+      "类型": "荞麦",
+      "推荐店/吃法": "本家尾张屋本店：京都老字号荞麦，适合想吃传统口味",
+      "适合日期": "Day5/Day8",
+      "预算感": "中",
+      "预约/排队": "午餐可能排队，闭店较早",
+      "点单建议": "宝来荞麦或天妇罗荞麦",
+      "P人备选": "行程不顺路就选京都站或河原町分店型餐饮",
+      "地图店铺": [
+        {
+          "店名": "本家尾张屋本店",
+          "地图查询": "Honke Owariya Honten Kyoto",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "京都市中心",
+      "类型": "咖啡/早餐",
+      "推荐店/吃法": "Inoda Coffee本店适合老派早餐；Weekenders适合快速喝精品咖啡",
+      "适合日期": "Day5-Day9",
+      "预算感": "低-中",
+      "预约/排队": "Inoda早餐可能排队；Weekenders座位很少",
+      "点单建议": "Inoda早餐套餐；Weekenders手冲/拿铁",
+      "P人备选": "按当天动线二选一，不必都打卡",
+      "地图店铺": [
+        {
+          "店名": "Inoda Coffee本店",
+          "地图查询": "Inoda Coffee Honten Kyoto",
+          "定位说明": ""
+        },
+        {
+          "店名": "Weekenders Coffee富小路",
+          "地图查询": "Weekenders Coffee Tominokoji Kyoto",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "京都四条乌丸",
+      "类型": "创意寿司",
+      "推荐店/吃法": "AWOMB乌丸本店：手织寿司摆盘漂亮，适合安排一顿仪式感午餐",
+      "适合日期": "Day5/Day8",
+      "预算感": "中-高",
+      "预约/排队": "建议提前预约并确认当日套餐",
+      "点单建议": "手织寿司套餐",
+      "P人备选": "约不到就去锦市场/河原町吃普通寿司",
+      "地图店铺": [
+        {
+          "店名": "AWOMB乌丸本店",
+          "地图查询": "AWOMB Karasuma Honten Kyoto",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "东京新宿",
+      "类型": "乌冬",
+      "推荐店/吃法": "Udon Shin：新宿热门手打乌冬，住新宿可较方便地错峰",
+      "适合日期": "Day9-Day11",
+      "预算感": "低-中",
+      "预约/排队": "常排队，先看地图实时繁忙度",
+      "点单建议": "培根天妇罗釜玉乌冬或冷乌冬",
+      "P人备选": "超过可接受等待时间就回新宿站商场",
+      "地图店铺": [
+        {
+          "店名": "Udon Shin",
+          "地图查询": "Udon Shin Shinjuku",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "东京新宿",
+      "类型": "沾面",
+      "推荐店/吃法": "风云儿：浓厚鸡白汤鱼介沾面，适合回酒店前快速吃",
+      "适合日期": "Day9-Day11",
+      "预算感": "低",
+      "预约/排队": "翻台较快但高峰仍会排队",
+      "点单建议": "特制沾面，食量小选普通份",
+      "P人备选": "不想排就找车站内拉面",
+      "地图店铺": [
+        {
+          "店名": "风云儿",
+          "地图查询": "Fuunji Shinjuku",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "东京涩谷",
+      "类型": "平价寿司",
+      "推荐店/吃法": "鱼べい道玄坂店：点单式寿司，购物途中补充体力方便",
+      "适合日期": "Day9/Day10",
+      "预算感": "低-中",
+      "预约/排队": "高峰可能排队，现场取号",
+      "点单建议": "少量多轮点，避免一次点太多",
+      "P人备选": "队伍长就进涩谷商场餐饮层",
+      "地图店铺": [
+        {
+          "店名": "鱼べい涩谷道玄坂店",
+          "地图查询": "Uobei Shibuya Dogenzaka",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "东京原宿",
+      "类型": "柚子拉面",
+      "推荐店/吃法": "AFURI原宿：柚子盐拉面清爽，适合逛街日",
+      "适合日期": "Day10",
+      "预算感": "低-中",
+      "预约/排队": "不能预约，翻台通常较快",
+      "点单建议": "柚子盐拉面，想浓一点可选柚子辣露",
+      "P人备选": "表参道人多时可留到涩谷再吃",
+      "地图店铺": [
+        {
+          "店名": "AFURI原宿",
+          "地图查询": "AFURI Harajuku",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "东京浅草",
+      "类型": "饭团早餐",
+      "推荐店/吃法": "浅草宿六：老牌现做饭团，适合回程日上午吃轻早餐",
+      "适合日期": "Day11/Day12",
+      "预算感": "低-中",
+      "预约/排队": "座位少，营业时段需出发前确认",
+      "点单建议": "两枚饭团加味噌汤",
+      "P人备选": "回程日遇到排队直接跳过",
+      "地图店铺": [
+        {
+          "店名": "浅草宿六",
+          "地图查询": "Onigiri Asakusa Yadoroku",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "东京浅草",
+      "类型": "铁板烧",
+      "推荐店/吃法": "染太郎：日式老屋中的文字烧/大阪烧体验",
+      "适合日期": "Day11东京自由",
+      "预算感": "中",
+      "预约/排队": "用餐时间较长，不建议赶飞机当天去",
+      "点单建议": "文字烧与大阪烧各点一种分食",
+      "P人备选": "时间紧就吃浅草小吃",
+      "地图店铺": [
+        {
+          "店名": "染太郎",
+          "地图查询": "Sometaro Asakusa",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "东京日本桥",
+      "类型": "海鲜丼",
+      "推荐店/吃法": "つじ半日本桥本店：海鲜珠宝丼，最后可加高汤做茶泡饭",
+      "适合日期": "Day11东京自由/Day12",
+      "预算感": "中",
+      "预约/排队": "热门时段排队明显，不适合赶飞机前硬等",
+      "点单建议": "基础梅套餐已足够丰富",
+      "P人备选": "排队长就改东京站商场寿司",
+      "地图店铺": [
+        {
+          "店名": "つじ半日本桥本店",
+          "地图查询": "Tsujihan Nihonbashi",
+          "定位说明": ""
+        }
+      ]
+    },
+    {
+      "区域": "镰仓由比滨",
+      "类型": "荞麦",
+      "推荐店/吃法": "松原庵：古民家荞麦与天妇罗，适合镰仓慢游",
+      "适合日期": "Day11镰仓",
+      "预算感": "中-高",
+      "预约/排队": "建议预约；用餐节奏较慢",
+      "点单建议": "荞麦加天妇罗套餐",
+      "P人备选": "时间紧就小町通或江之岛吃吻仔鱼丼",
+      "地图店铺": [
+        {
+          "店名": "镰仓松原庵",
+          "地图查询": "Kamakura Matsubaraan",
+          "定位说明": ""
+        }
+      ]
+    }
+  ],
+  "lodging": [
+    {
+      "阶段": "大阪段",
+      "日期": "09-25至09-29",
+      "晚数": "4晚",
+      "首选区域": "梅田/大阪站",
+      "备选区域": "难波/心斋桥",
+      "为什么": "这版加了姬路神户和USJ，梅田/大阪站去JR方向更顺；难波夜生活和机场南海更顺。",
+      "适合酒店关键词": "Umeda、Osaka Station、Namba、Shinsaibashi",
+      "导游建议": "如果你更爱晚上吃喝逛，选难波；如果更怕换乘和拖行李，选梅田。",
+      "住宿推荐": [
+        {
+          "名称": "东横INN大阪难波西",
+          "区域": "难波/元町",
+          "预算感": "约¥350–500/间夜",
+          "适合理由": "独立卫浴，通常含简易早餐；步行可到南海难波站，兼顾关西机场与道顿堀。",
+          "地图查询": "Toyoko Inn Osaka Namba Nishi"
+        },
+        {
+          "名称": "东横INN大阪难波日本桥",
+          "区域": "日本桥/难波",
+          "预算感": "约¥350–500/间夜",
+          "适合理由": "独立卫浴并含简易早餐，靠近黑门市场；去难波、心斋桥和机场都方便。",
+          "地图查询": "Toyoko Inn Osaka Namba Nippombashi"
+        },
+        {
+          "名称": "KOKO HOTEL 大阪难波惠美须町",
+          "区域": "惠美须町/新世界",
+          "预算感": "约¥300–500/间夜",
+          "适合理由": "独立卫浴；地铁堺筋线出行方便，房价通常比难波核心区友好。",
+          "地图查询": "KOKO HOTEL Osaka Namba Ebisucho"
+        },
+        {
+          "名称": "KOKO HOTEL 大阪梅田",
+          "区域": "梅田/大阪站东侧",
+          "预算感": "促销约¥400–500/间夜",
+          "适合理由": "独立卫浴；到大阪站约步行10分钟，去姬路、神户和USJ换乘顺，超预算时跳过。",
+          "地图查询": "KOKO HOTEL Osaka Umeda"
+        },
+        {
+          "名称": "Hotel Sunplaza 2 Annex",
+          "区域": "新今宫/动物园前",
+          "预算感": "约¥200–400/间夜",
+          "适合理由": "经济型私人客房，部分房型使用共用浴场/卫浴；JR、南海和地铁三线可用。",
+          "地图查询": "Hotel Sunplaza 2 Annex Osaka"
+        },
+        {
+          "名称": "Hotel Toyo Osaka",
+          "区域": "动物园前/新今宫",
+          "预算感": "约¥150–300/间夜",
+          "适合理由": "青旅型私人房、共用卫浴，适合单人压低预算；在意隔音和卫浴私密性则不选。",
+          "地图查询": "Hotel Toyo Osaka"
+        }
+      ]
+    },
+    {
+      "阶段": "京都段",
+      "日期": "09-29至10-03",
+      "晚数": "4晚",
+      "首选区域": "四条乌丸/四条河原町",
+      "备选区域": "京都站/祇园四条",
+      "为什么": "4晚京都值得住进市中心，晚上鸭川、先斗町、河原町都能临时起意。",
+      "适合酒店关键词": "Shijo、Karasuma、Kyoto-Kawaramachi、Gion-Shijo",
+      "导游建议": "我最推荐四条乌丸：交通、价格、安静度比较均衡。",
+      "住宿推荐": [
+        {
+          "名称": "THE POCKET HOTEL 京都乌丸五条",
+          "区域": "五条/乌丸线",
+          "预算感": "约¥250–450/间夜",
+          "适合理由": "带锁私人房、共用卫浴；五条站步行约1分钟，适合单人住且交通很省力。",
+          "地图查询": "THE POCKET HOTEL Kyoto Karasuma Gojo"
+        },
+        {
+          "名称": "HOTEL TAVINOS Kyoto",
+          "区域": "河原町五条/清水五条",
+          "预算感": "约¥300–500/间夜",
+          "适合理由": "紧凑型独立客房，步行可到清水五条站；去祇园、清水寺与京都站较均衡。",
+          "地图查询": "HOTEL TAVINOS Kyoto"
+        },
+        {
+          "名称": "ibis Styles Kyoto Shijo",
+          "区域": "四条乌丸",
+          "预算感": "约¥350–500/间夜",
+          "适合理由": "独立卫浴，四条站和乌丸站步行约4分钟；位置贴合原攻略，促销价合适时优先。",
+          "地图查询": "ibis Styles Kyoto Shijo"
+        },
+        {
+          "名称": "HOTEL M's PLUS SHIJO OMIYA",
+          "区域": "四条大宫",
+          "预算感": "约¥300–500/间夜",
+          "适合理由": "独立卫浴，靠近阪急与岚电；去岚山方便，坐一小段车即可到四条河原町。",
+          "地图查询": "HOTEL M's PLUS SHIJO OMIYA"
+        },
+        {
+          "名称": "WeBase 京都",
+          "区域": "四条乌丸",
+          "预算感": "约¥200–450/人夜",
+          "适合理由": "青旅/简约酒店，按胶囊床位或私人房选择；四条站步行约5分钟，适合单人。",
+          "地图查询": "WeBase Kyoto"
+        },
+        {
+          "名称": "东横INN京都四条大宫",
+          "区域": "四条大宫",
+          "预算感": "约¥350–500/间夜",
+          "适合理由": "独立卫浴并通常含简易早餐，适合看重稳定连锁标准和交通便利的人。",
+          "地图查询": "Toyoko Inn Kyoto Shijo Omiya"
+        }
+      ]
+    },
+    {
+      "阶段": "东京段",
+      "日期": "10-03至10-06",
+      "晚数": "3晚",
+      "首选区域": "新宿/代代木",
+      "备选区域": "东京站/银座/上野",
+      "为什么": "如果保留富士山或镰仓，新宿容错率最高；如果航班很早，末晚可按机场换到更顺区域。",
+      "适合酒店关键词": "Shinjuku、Yoyogi、Tokyo Station、Ginza、Ueno",
+      "导游建议": "返程机场未定：成田偏上野/东京站，羽田偏品川/银座。",
+      "住宿推荐": [
+        {
+          "名称": "HOTEL TAVINOS Asakusa",
+          "区域": "浅草",
+          "预算感": "约¥350–500/间夜",
+          "适合理由": "紧凑型独立客房，适合浅草与上野动线；去新宿约需半小时，优先保预算。",
+          "地图查询": "HOTEL TAVINOS Asakusa"
+        },
+        {
+          "名称": "Agora Place Tokyo Asakusa",
+          "区域": "田原町/浅草",
+          "预算感": "约¥400–500/间夜",
+          "适合理由": "独立卫浴，田原町站步行约1分钟；银座线上野、银座和涩谷无需换乘。",
+          "地图查询": "Agora Place Tokyo Asakusa"
+        },
+        {
+          "名称": "HOTEL MYSTAYS Asakusa",
+          "区域": "本所/藏前",
+          "预算感": "约¥350–500/间夜",
+          "适合理由": "独立卫浴并有投币洗衣房；位置不在最热闹街区，通常更容易守住预算。",
+          "地图查询": "HOTEL MYSTAYS Asakusa"
+        },
+        {
+          "名称": "Ueno New Izu Hotel",
+          "区域": "上野/稻荷町",
+          "预算感": "约¥350–500/间夜",
+          "适合理由": "老牌经济型酒店，步行可到上野站；适合成田机场、浅草和东京站方向。",
+          "地图查询": "Ueno New Izu Hotel Tokyo"
+        },
+        {
+          "名称": "Juyoh Hotel",
+          "区域": "南千住/山谷",
+          "预算感": "约¥200–350/间夜",
+          "适合理由": "经济型私人房、共用卫浴；预算优先的单人备选，夜间回程需多留意周边环境。",
+          "地图查询": "Juyoh Hotel Tokyo"
+        },
+        {
+          "名称": "Hotel Palace Japan",
+          "区域": "南千住",
+          "预算感": "约¥200–400/间夜",
+          "适合理由": "带锁私人房、共用卫浴，价格通常低于核心区商务酒店；适合单人轻装入住。",
+          "地图查询": "Hotel Palace Japan Tokyo"
+        },
+        {
+          "名称": "9h nine hours Shinjuku-North",
+          "区域": "新大久保/新宿北侧",
+          "预算感": "约¥250–450/人夜",
+          "适合理由": "胶囊房，2026年开业；想保留新宿动线且能接受共用卫浴时再选。",
+          "地图查询": "9h nine hours Shinjuku-North"
+        }
+      ]
+    },
+    {
+      "阶段": "可选温泉",
+      "日期": "任一关西晚",
+      "晚数": "0-1晚",
+      "首选区域": "有马温泉",
+      "备选区域": "大阪/京都不换酒店当天往返",
+      "为什么": "如果想加温泉体验，有马比箱根更贴合关西加强主题。",
+      "适合酒店关键词": "Arima Onsen、Kobe Sannomiya",
+      "导游建议": "不强制换住，P人更建议神户日当天泡脚/短汤体验。",
+      "住宿推荐": [
+        {
+          "名称": "东横INN神户三宫1号店",
+          "区域": "神户三宫",
+          "预算感": "约¥350–500/间夜",
+          "适合理由": "独立卫浴并通常含简易早餐；住三宫后白天往返有马温泉，比住温泉旅馆省钱。",
+          "地图查询": "Toyoko Inn Kobe Sannomiya No.1"
+        },
+        {
+          "名称": "Kobe Sannomiya Union Hotel",
+          "区域": "神户三宫东侧",
+          "预算感": "约¥300–500/间夜",
+          "适合理由": "独立卫浴的商务酒店，适合把神户作为有马温泉日归基地。",
+          "地图查询": "Kobe Sannomiya Union Hotel"
+        },
+        {
+          "名称": "Kobe City Gardens Hotel",
+          "区域": "JR神户站",
+          "预算感": "约¥250–450/间夜",
+          "适合理由": "经济型独立客房，靠近JR神户站；适合先看港区、再搭车去有马。",
+          "地图查询": "Kobe City Gardens Hotel"
+        },
+        {
+          "名称": "Hostel Anchorage",
+          "区域": "神户站/港区",
+          "预算感": "约¥180–350/人夜",
+          "适合理由": "青旅床位或简约私人房、共用卫浴；预算最优先时选择。",
+          "地图查询": "Hostel Anchorage Kobe"
+        }
+      ]
+    }
+  ],
+  "alternatives": [
+    {
+      "场景": "9/25航班晚点",
+      "原计划": "落地后心斋桥+道顿堀",
+      "改法": "只酒店周边吃饭，Day2晚上补道顿堀",
+      "损失": "少一晚夜景",
+      "收益": "不透支第一天",
+      "备注": "第一晚睡好，后面才稳。"
+    },
+    {
+      "场景": "9/26大阪下雨",
+      "原计划": "大阪城+梅田",
+      "改法": "大阪城外观缩短，改梅田/难波室内购物",
+      "损失": "少拍户外",
+      "收益": "购物效率高",
+      "备注": "大阪雨天不难玩。"
+    },
+    {
+      "场景": "9/27不想跑姬路",
+      "原计划": "姬路+神户",
+      "改法": "改神户一日：北野、南京町、港湾、有马温泉短汤",
+      "损失": "少看姬路城",
+      "收益": "更轻松",
+      "备注": "适合前两天太累。"
+    },
+    {
+      "场景": "9/28USJ人爆多",
+      "原计划": "刷项目",
+      "改法": "只保任天堂、哈利波特、巡游、购物拍照",
+      "损失": "少玩刺激项目",
+      "收益": "体验不崩",
+      "备注": "排队超过90分钟就换目标。"
+    },
+    {
+      "场景": "9/30岚山起晚",
+      "原计划": "岚山+金阁寺",
+      "改法": "只岚山河边+天龙寺，删金阁寺",
+      "损失": "少一个景点",
+      "收益": "不赶公交",
+      "备注": "岚山晚到也能慢逛。"
+    },
+    {
+      "场景": "10/1国庆人多",
+      "原计划": "宇治+奈良",
+      "改法": "宇治深玩，奈良只若草山；或奈良改到下午晚点",
+      "损失": "少刷寺社",
+      "收益": "避开最挤动线",
+      "备注": "人多时别追热门餐厅。"
+    },
+    {
+      "场景": "10/2下雨",
+      "原计划": "贵船鞍马/大原",
+      "改法": "改伏见稻荷早去+锦市场+京都站/河原町购物",
+      "损失": "少山水",
+      "收益": "鞋和心情都保住",
+      "备注": "山路雨天不舒服。"
+    },
+    {
+      "场景": "10/3不想赶新干线",
+      "原计划": "中午到东京",
+      "改法": "京都上午睡到自然醒，下午到东京只吃饭",
+      "损失": "少半天东京",
+      "收益": "换城更舒服",
+      "备注": "东京还留两整天。"
+    },
+    {
+      "场景": "10/5富士山看不见",
+      "原计划": "河口湖",
+      "改法": "改镰仓江之岛，或东京银座/浅草/秋叶原补购物",
+      "损失": "少富士山",
+      "收益": "不浪费全天交通",
+      "备注": "富士山是天气行程，不是意志力行程。"
+    },
+    {
+      "场景": "10/6航班早",
+      "原计划": "浅草/银座",
+      "改法": "直接机场，伴手礼机场补",
+      "损失": "少最后半天",
+      "收益": "回程安全",
+      "备注": "国际航班别卡点。"
+    }
+  ],
+  "transport": [
+    {
+      "事项": "USJ门票/快通",
+      "建议时间": "出发前越早越好",
+      "建议做法": "先买门票，前一晚绑定官方App；热门项目靠App看整理券/排队",
+      "风险点": "USJ官方说明营业时间和入园时间可能变化",
+      "P人提醒": "9/28是周一仍可能因万圣季人多，预算够就快通买轻松。"
+    },
+    {
+      "事项": "姬路+神户交通",
+      "建议时间": "当天即可",
+      "建议做法": "大阪站坐JR新快速到姬路，下午姬路到三宫/元町，晚上回大阪",
+      "风险点": "周日人多但比USJ可控",
+      "P人提醒": "不坐新干线也可以，省钱且不用预约。"
+    },
+    {
+      "事项": "大阪→京都",
+      "建议时间": "当天或前一晚",
+      "建议做法": "住京都站选JR；住河原町选阪急；住祇园四条选京阪",
+      "风险点": "拖行李换乘消耗大",
+      "P人提醒": "先定酒店，再定线路。"
+    },
+    {
+      "事项": "京都市内交通",
+      "建议时间": "每天早上确认",
+      "建议做法": "公交+地铁+私铁混用；岚山可JR/阪急，伏见稻荷可JR/京阪",
+      "风险点": "京都公交拥挤，国庆期间热门线更慢",
+      "P人提醒": "能地铁/私铁就少坐热门公交。"
+    },
+    {
+      "事项": "京都→东京新干线",
+      "建议时间": "建议提前",
+      "建议做法": "10/3周六移动，建议指定席；行李大则留意大件行李规则",
+      "风险点": "周六+中国国庆出行，座位更紧",
+      "P人提醒": "不赶早班，中午出发体验更稳。"
+    },
+    {
+      "事项": "富士山日",
+      "建议时间": "出发前1-3天",
+      "建议做法": "看能见度再订大巴/一日团；不佳则改镰仓或东京自由",
+      "风险点": "天气差会完全看不见山",
+      "P人提醒": "这天不要提前锁死不可退项目。"
+    },
+    {
+      "事项": "返程机场交通",
+      "建议时间": "10/5晚上",
+      "建议做法": "按成田/羽田确认路线和出发时间",
+      "风险点": "回程日临时查会很慌",
+      "P人提醒": "把酒店到机场路线收藏到Google Map。"
+    }
+  ],
+  "checklist": [
+    {
+      "类别": "证件",
+      "动作": "护照/签证/入境码",
+      "建议": "出发前完成并截图，纸质备份一份",
+      "为什么": "广州出发当天不该被材料拖住",
+      "优先级": "高"
+    },
+    {
+      "类别": "现金",
+      "动作": "日元现金+零钱包",
+      "建议": "每人先备约3万日元，后续便利店ATM补",
+      "为什么": "寺社、小店、硬币场景仍常见",
+      "优先级": "高"
+    },
+    {
+      "类别": "网络",
+      "动作": "eSIM/流量卡/漫游",
+      "建议": "优先稳定网络，USJ和山里可能信号弱",
+      "为什么": "P人临时改路线靠网络",
+      "优先级": "高"
+    },
+    {
+      "类别": "预约",
+      "动作": "USJ、涩谷SKY/观景台、新干线",
+      "建议": "能提前的先提前，天气行程不提前锁死",
+      "为什么": "该预约的别随缘，该随缘的别锁死",
+      "优先级": "高"
+    },
+    {
+      "类别": "鞋服",
+      "动作": "运动鞋+薄外套",
+      "建议": "9月底10月初早晚温差和日均步数都要考虑",
+      "为什么": "京都坡道、姬路城楼梯、USJ排队都费脚",
+      "优先级": "高"
+    },
+    {
+      "类别": "行李",
+      "动作": "大阪4晚/京都4晚/东京3晚",
+      "建议": "控制换酒店次数，必要时用车站寄存/宅急便",
+      "为什么": "12天最怕拖箱子消耗心情",
+      "优先级": "中"
+    },
+    {
+      "类别": "天气",
+      "动作": "富士山/贵船/岚山当天确认",
+      "建议": "山水行程看天气，市区购物做备选",
+      "为什么": "日本秋季也可能遇雨",
+      "优先级": "高"
+    }
+  ],
+  "updatedAt": "2026-07-30"
+};
+
+const data = window.TRIP_DATA;
+
+const state = {
+  view: "days",
+  city: "全部",
+  query: "",
+};
+
+const $ = (selector) => document.querySelector(selector);
+
+function text(value) {
+  return value || "按当天情况调整";
+}
+
+function googleMapsUrl(route) {
+  const params = new URLSearchParams({
+    api: "1",
+    origin: route["地图起点"],
+    destination: route["地图终点"],
+    travelmode: route["方式"] === "步行" ? "walking" : "transit",
+  });
+  return `https://www.google.com/maps/dir/?${params.toString()}`;
+}
+
+function routeList(routes) {
+  return `
+    <div class="route-list">
+      ${routes.map(route => `
+        <a class="route-row" href="${googleMapsUrl(route)}" target="_blank" rel="noopener noreferrer" title="在 Google Maps 打开实时路线">
+          <div class="route-points">
+            ${route["方案"] ? `<span class="route-option">${route["方案"]}</span>` : ""}
+            ${route["起点"]} → ${route["终点"]}
+          </div>
+          <span class="route-time">${route["方式"]} · ${route["耗时"]}</span>
+          ${route["说明"] ? `<span class="route-note">${route["说明"]}</span>` : ""}
+        </a>
+      `).join("")}
+    </div>
+    <div class="route-source">Google Maps 于 2026-07-30 日间查询；点击任一路段可按出发时刻查看实时班次。未含逛景点、排队及大型车站内找路时间。</div>
+  `;
+}
+
+function includesQuery(item, query) {
+  if (!query) return true;
+  return JSON.stringify(item).toLowerCase().includes(query.toLowerCase());
+}
+
+function detectCity(day) {
+  const blob = `${day["入住"]} ${day["主线"]} ${day["必去锚点"]}`;
+  if (blob.includes("大阪") || blob.includes("USJ") || blob.includes("神户") || blob.includes("姬路")) return "关西";
+  if (blob.includes("京都") || blob.includes("宇治") || blob.includes("奈良")) return "京都";
+  if (blob.includes("东京") || blob.includes("富士") || blob.includes("镰仓")) return "东京";
+  return "全部";
+}
+
+function renderHero() {
+  $("#tripDates").textContent = data.trip.dates;
+  $("#tripTitle").textContent = data.trip.title;
+  $("#tripSubtitle").textContent = data.trip.subtitle;
+  $("#tripRoute").textContent = data.trip.route;
+  $("#updatedAt").textContent = `更新 ${data.updatedAt}`;
+}
+
+function renderChips() {
+  const chips = ["全部", "关西", "京都", "东京"];
+  $("#cityChips").innerHTML = chips
+    .map((city) => `<button class="chip ${state.city === city ? "is-active" : ""}" data-city="${city}" type="button">${city}</button>`)
+    .join("");
+}
+
+function dayCard(day, index) {
+  const food = day["吃法"] || {};
+  const details = day["细节"] || [];
+  const routes = day["交通分段"] || [];
+  const open = index === 0 ? "open" : "";
+  return `
+    <details class="day-card" ${open}>
+      <summary>
+        <div class="day-top">
+          <div>
+            <div class="day-kicker">${day["天数"]} · ${day["日期"]} · ${day["星期"]}</div>
+            <h3 class="day-title">${day["主线"]}</h3>
+          </div>
+          <span class="stay">${day["入住"]}</span>
+        </div>
+        <p class="anchors">${day["必去锚点"]}</p>
+      </summary>
+      <div class="day-body">
+        <div class="field"><strong>P人玩法</strong><p>${day["P人友好玩法"]}</p></div>
+        <div class="field"><strong>交通</strong><p>${day["交通重点"]}</p></div>
+        ${routes.length ? `<div class="field"><strong>逐段交通耗时 · ${routes.length}段</strong>${routeList(routes)}</div>` : ""}
+        <div class="field"><strong>晚餐/夜间</strong><p>${day["晚餐/夜间建议"]}</p></div>
+        <div class="field"><strong>当天吃法</strong><p>${text(food["午餐"])}；${text(food["晚餐"])}。${text(food["P人吃法"])}</p></div>
+        ${details.length ? `<div class="field"><strong>分时段</strong><div class="detail-list">${details.map(detail => `
+          <div class="detail-row">
+            <div class="tag">${detail["时间块"]} · ${detail["城市"]}</div>
+            <p>${detail["建议安排"]}</p>
+          </div>`).join("")}</div></div>` : ""}
+      </div>
+    </details>
+  `;
+}
+
+function renderDays() {
+  const filtered = data.days.filter((day) => {
+    const cityOk = state.city === "全部" || detectCity(day) === state.city;
+    return cityOk && includesQuery(day, state.query);
+  });
+  $("#dayList").innerHTML = filtered.map(dayCard).join("") || `<div class="info-card"><h3>没有匹配内容</h3><p>换个关键词试试。</p></div>`;
+}
+
+function googleMapsSearchUrl(location) {
+  const params = new URLSearchParams({
+    api: "1",
+    query: location["地图查询"],
+  });
+  return `https://www.google.com/maps/search/?${params.toString()}`;
+}
+
+function foodLocationLinks(locations) {
+  if (!locations.length) return "";
+  return `
+    <div class="food-map-links">
+      ${locations.map(location => `
+        <a class="food-map-link" href="${googleMapsSearchUrl(location)}" target="_blank" rel="noopener noreferrer" title="在 Google Maps 打开 ${location["店名"]}">
+          <span aria-hidden="true">📍</span>${location["店名"]}<span aria-hidden="true">↗</span>
+        </a>
+        ${location["定位说明"] ? `<span class="food-map-note">${location["定位说明"]}</span>` : ""}
+      `).join("")}
+    </div>
+  `;
+}
+
+function renderFood() {
+  const groups = data.foodMap.reduce((acc, item) => {
+    const region = item["区域"] || "其他";
+    acc[region] = acc[region] || [];
+    acc[region].push(item);
+    return acc;
+  }, {});
+  $("#foodGroups").innerHTML = Object.entries(groups).map(([region, items]) => `
+    <div class="food-region">${region}</div>
+    ${items.map(item => `
+      <article class="food-card">
+        <div class="meta"><span>${item["类型"]}</span><span>${item["预算感"]}</span><span>${item["适合日期"]}</span></div>
+        <h3>${item["推荐店/吃法"]}</h3>
+        ${foodLocationLinks(item["地图店铺"] || [])}
+        <div class="field"><strong>预约/排队</strong><p>${item["预约/排队"]}</p></div>
+        <div class="field"><strong>点单</strong><p>${item["点单建议"]}</p></div>
+        <div class="field"><strong>备选</strong><p>${item["P人备选"]}</p></div>
+      </article>
+    `).join("")}
+  `).join("");
+}
+
+function googleMapsFromHereUrl(hotel) {
+  const params = new URLSearchParams({
+    api: "1",
+    destination: hotel["地图查询"],
+    travelmode: "transit",
+  });
+  return `https://www.google.com/maps/dir/?${params.toString()}`;
+}
+
+function hotelList(hotels) {
+  if (!hotels.length) return "";
+  return `
+    <div class="hotel-list">
+      ${hotels.map(hotel => `
+        <div class="hotel-pick">
+          <div class="hotel-top">
+            <div>
+              <h4 class="hotel-name">${hotel["名称"]}</h4>
+              <div class="hotel-area">${hotel["区域"]}</div>
+            </div>
+            <span class="hotel-budget">参考 ${hotel["预算感"]}</span>
+          </div>
+          <p class="hotel-reason">${hotel["适合理由"]}</p>
+          <div class="hotel-actions">
+            <a class="hotel-link" href="${googleMapsSearchUrl(hotel)}" target="_blank" rel="noopener noreferrer" title="在 Google Maps 查看 ${hotel["名称"]}">📍 地图定位</a>
+            <a class="hotel-link hotel-link--route" href="${googleMapsFromHereUrl(hotel)}" target="_blank" rel="noopener noreferrer" title="从当前位置前往 ${hotel["名称"]}">从我这里出发 ↗</a>
+          </div>
+        </div>
+      `).join("")}
+    </div>
+    <div class="hotel-location-note">“从我这里出发”不会写死起点；手机需允许 Google Maps 使用当前位置。价格按单人或一间基础房估算，仅作 ¥300–500 筛选参考；请以 2026年9月25日至10月6日 的实时含税总价为准。标有共用卫浴、青旅或胶囊的候选，下单前请再次确认房型。</div>
+  `;
+}
+
+function lodgingCard(item) {
+  const hotels = item["住宿推荐"] || [];
+  return `
+    <article class="info-card">
+      <div class="meta">
+        <span>${item["日期"]}</span>
+        <span>${item["晚数"]}晚</span>
+        <span>备选 ${item["备选区域"]}</span>
+      </div>
+      <h3>${item["阶段"]} · ${item["首选区域"]}</h3>
+      <div class="field"><strong>为什么</strong><p>${item["为什么"]}</p></div>
+      <div class="field"><strong>导游建议</strong><p>${item["导游建议"]}</p></div>
+      ${hotels.length ? `<div class="field"><strong>具体住宿 · ${hotels.length}家</strong>${hotelList(hotels)}</div>` : ""}
+    </article>
+  `;
+}
+
+function simpleCard(title, meta, fields) {
+  return `
+    <article class="info-card">
+      <div class="meta">${meta.filter(Boolean).map(item => `<span>${item}</span>`).join("")}</div>
+      <h3>${title}</h3>
+      ${fields.map(([label, value]) => `<div class="field"><strong>${label}</strong><p>${value}</p></div>`).join("")}
+    </article>
+  `;
+}
+
+function renderSimpleLists() {
+  $("#lodgingList").innerHTML = data.lodging.map(lodgingCard).join("");
+
+  $("#planbList").innerHTML = data.alternatives.map(item => simpleCard(
+    item["场景"],
+    [item["原计划"]],
+    [["改法", item["改法"]], ["收益", item["收益"]], ["备注", item["备注"]]]
+  )).join("");
+
+  $("#transportList").innerHTML = data.transport.map(item => simpleCard(
+    item["事项"],
+    [item["建议时间"]],
+    [["建议做法", item["建议做法"]], ["风险点", item["风险点"]], ["P人提醒", item["P人提醒"]]]
+  )).join("");
+
+  $("#checkList").innerHTML = data.checklist.map(item => simpleCard(
+    `${item["类别"]} · ${item["动作"]}`,
+    [item["优先级"]],
+    [["建议", item["建议"]], ["为什么", item["为什么"]]]
+  )).join("");
+}
+
+function switchView(view) {
+  state.view = view;
+  document.querySelectorAll(".tab").forEach(tab => tab.classList.toggle("is-active", tab.dataset.view === view));
+  document.querySelectorAll(".content-view").forEach(panel => panel.classList.remove("is-visible"));
+  $(`#${view}View`).classList.add("is-visible");
+  $("#dayToolbar").style.display = view === "days" ? "block" : "none";
+}
+
+function bindEvents() {
+  document.querySelector(".tabs").addEventListener("click", (event) => {
+    const button = event.target.closest(".tab");
+    if (!button) return;
+    switchView(button.dataset.view);
+  });
+
+  $("#cityChips").addEventListener("click", (event) => {
+    const button = event.target.closest(".chip");
+    if (!button) return;
+    state.city = button.dataset.city;
+    renderChips();
+    renderDays();
+  });
+
+  $("#searchInput").addEventListener("input", (event) => {
+    state.query = event.target.value.trim();
+    renderDays();
+  });
+}
+
+renderHero();
+renderChips();
+renderDays();
+renderFood();
+renderSimpleLists();
+bindEvents();
+
+    </script>
+  </body>
+</html>

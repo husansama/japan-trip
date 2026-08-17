@@ -333,6 +333,76 @@ main {
   margin-top: 10px;
 }
 
+.attraction-list,
+.pass-use-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.attraction-card {
+  padding: 11px;
+  border: 1px solid #dce8e4;
+  border-radius: 8px;
+  background: #f7fbf9;
+}
+
+.attraction-card-head {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.attraction-card h4,
+.pass-use-card h4 {
+  margin: 0;
+  color: var(--green);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.attraction-card-head span {
+  flex: 0 0 auto;
+  padding: 3px 6px;
+  border-radius: 999px;
+  background: #f4efe4;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.attraction-card p,
+.pass-use-card p {
+  margin: 7px 0 0;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.attraction-card .attraction-card-tip {
+  color: var(--muted);
+}
+
+.attraction-card-tip strong,
+.pass-use-card p strong {
+  color: var(--green);
+}
+
+.pass-use-card {
+  padding: 12px;
+  border: 1px solid #efd7ad;
+  border-radius: 8px;
+  background: #fff9ec;
+}
+
+.pass-use-kicker {
+  margin-bottom: 4px;
+  color: var(--coral);
+  font-size: 11px;
+  font-weight: 900;
+}
+
 .route-list {
   display: grid;
   gap: 8px;

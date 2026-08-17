@@ -68,9 +68,44 @@ function renderChips() {
     .join("");
 }
 
+function attractionList(attractions) {
+  return `
+    <div class="attraction-list">
+      ${attractions.map(item => `
+        <article class="attraction-card">
+          <div class="attraction-card-head">
+            <h4>${item["名称"]}</h4>
+            <span>${item["建议停留"]}</span>
+          </div>
+          <p>${item["说明"]}</p>
+          <p class="attraction-card-tip"><strong>怎么玩：</strong>${item["怎么玩"]}</p>
+          <p class="attraction-card-tip"><strong>取舍：</strong>${item["取舍"]}</p>
+        </article>
+      `).join("")}
+    </div>
+  `;
+}
+
+function passUseList(items) {
+  return `
+    <div class="pass-use-list">
+      ${items.map(item => `
+        <article class="pass-use-card">
+          <div class="pass-use-kicker">${item["票券"]}</div>
+          <h4>${item["项目"]}</h4>
+          <p><strong>怎么用：</strong>${item["执行"]}</p>
+          <p><strong>临场提醒：</strong>${item["提醒"]}</p>
+        </article>
+      `).join("")}
+    </div>
+  `;
+}
+
 function dayCard(day, index) {
   const food = day["吃法"] || {};
   const details = day["细节"] || [];
+  const attractions = day["景点详解"] || [];
+  const passUses = day["票券安排"] || [];
   const routes = day["交通分段"] || [];
   const open = index === 0 ? "open" : "";
   return `
@@ -87,6 +122,8 @@ function dayCard(day, index) {
       </summary>
       <div class="day-body">
         <div class="field"><strong>P人玩法</strong><p>${day["P人友好玩法"]}</p></div>
+        ${passUses.length ? `<div class="field"><strong>票券使用 · 当天照此执行</strong>${passUseList(passUses)}</div>` : ""}
+        ${attractions.length ? `<div class="field"><strong>景点详解 · 看什么、怎么玩、累了删什么</strong>${attractionList(attractions)}</div>` : ""}
         <div class="field"><strong>交通</strong><p>${day["交通重点"]}</p></div>
         ${routes.length ? `<div class="field"><strong>逐段交通耗时 · ${routes.length}段</strong>${routeList(routes)}</div>` : ""}
         <div class="field"><strong>晚餐/夜间</strong><p>${day["晚餐/夜间建议"]}</p></div>
@@ -326,7 +363,7 @@ function renderUSJ() {
     </article>
   `).join("");
 
-  const routeTimeline = guide.route_timeline.map(item => `
+  const routeTimeline = timeline => timeline.map(item => `
     <article class="usj-route-step">
       <div class="usj-route-step-marker">${item["序号"]}</div>
       <div class="usj-route-step-content">
@@ -344,6 +381,9 @@ function renderUSJ() {
       </div>
     </article>
   `).join("");
+
+  const paidPassTimeline = routeTimeline(guide.route_timeline);
+  const noPass4Timeline = routeTimeline(guide.route_timeline_no_pass4);
 
   const strategies = guide.strategies.map(item => `
     <article class="usj-strategy-card ${item["方案"].includes("Pass 4") ? "is-recommended" : ""}">
@@ -385,13 +425,24 @@ function renderUSJ() {
     </article>
   `).join("");
 
+  const storageCards = guide.storage_tips["必须存包"].map(item => `
+    <article class="usj-pass-card is-recommended">
+      <div class="usj-date-top">
+        <h4>${item["项目"]}</h4>
+        <span class="usj-decision">必须存包</span>
+      </div>
+      <div class="field"><strong>开柜方式</strong><p>${item["柜门方式"]}</p></div>
+      <div class="field"><strong>操作技巧</strong><p>${item["操作技巧"]}</p></div>
+    </article>
+  `).join("");
+
   const sources = guide.sources.map(item => `
     <a class="usj-source-link" href="${item["网址"]}" target="_blank" rel="noopener noreferrer">${item["名称"]}</a>
   `).join("");
 
   $("#usjGuide").innerHTML = `
     <article class="usj-hero-card">
-      <h3>客流优先：9月27日＋核心Express Pass 4</h3>
+      <h3>9月28日执行：USJ门票＋禁忌之旅快速通1，不买速通4</h3>
       <p>${guide.summary["结论"]}</p>
       <p class="usj-small-note">${guide.summary["预测说明"]}</p>
       <p class="usj-small-note">当天动作：${guide.summary["当天动作"]}</p>
@@ -406,6 +457,13 @@ function renderUSJ() {
       <div class="usj-section-head"><h3>园区大地图＋路线编号</h3><span>手机可横向滑动查看</span></div>
       ${renderUSJRouteMap()}
       <a class="usj-official-map-link" href="https://www.usj.co.jp/web/ja/jp/service-guide/parkmap" target="_blank" rel="noopener noreferrer">打开USJ官方实时地图</a>
+    </section>
+
+    <section class="usj-section">
+      <div class="usj-section-head"><h3>存包技巧</h3><span>必须存包3类，其余小包通常可随身</span></div>
+      <p class="usj-inline-note">${guide.storage_tips["总原则"]}</p>
+      <div class="usj-pass-grid">${storageCards}</div>
+      <ul class="usj-closure-list usj-single-rules">${guide.storage_tips["其他规则"].map(item => `<li>${item}</li>`).join("")}</ul>
     </section>
 
     <section class="usj-section">
@@ -425,14 +483,25 @@ function renderUSJ() {
     </section>
 
     <section class="usj-section">
-      <div class="usj-section-head"><h3>速通4条件下的最优时间轴</h3><span>${guide.route_assumption["适用日期"]}</span></div>
+      <div class="usj-section-head"><h3>若临时加购速通4的时间轴</h3><span>${guide.route_assumption["适用日期"]}</span></div>
       <div class="usj-route-assumption">
         <strong>${guide.route_assumption["目标套餐"]}</strong>
         <p>建议购票时段：${guide.route_assumption["建议时段"]}</p>
         <p>${guide.route_assumption["固定节点"]}</p>
         <p>${guide.route_assumption["说明"]}</p>
       </div>
-      <div class="usj-route-timeline">${routeTimeline}</div>
+      <div class="usj-route-timeline">${paidPassTimeline}</div>
+    </section>
+
+    <section class="usj-section">
+      <div class="usj-section-head"><h3>不加购速通4：自带手环＋禁忌之旅快速通1</h3><span>${guide.no_pass4_assumption["适用日期"]}</span></div>
+      <div class="usj-route-assumption">
+        <strong>${guide.no_pass4_assumption["目标套餐"]}</strong>
+        <p>建议节奏：${guide.no_pass4_assumption["建议时段"]}</p>
+        <p>${guide.no_pass4_assumption["固定节点"]}</p>
+        <p>${guide.no_pass4_assumption["说明"]}</p>
+      </div>
+      <div class="usj-route-timeline">${noPass4Timeline}</div>
     </section>
 
     <section class="usj-section">

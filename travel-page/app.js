@@ -169,6 +169,34 @@ function foodLocationLinks(locations) {
 }
 
 function renderFood() {
+  const visuals = (data.foodVisuals || []).map(item => `
+    <article class="food-visual">
+      <img src="${item["图片"]}" alt="${item["城市"]}${item["标题"]}氛围图" loading="lazy" />
+      <div class="food-visual-copy">
+        <span>${item["城市"]}</span>
+        <strong>${item["标题"]}</strong>
+        <p>${item["说明"]}</p>
+      </div>
+    </article>
+  `).join("");
+  const guide = (data.coupleFoodGuide || []).map((item, index) => `
+    <article class="food-day-card ${[2, 4, 8].includes(index) ? "food-day-card--highlight" : ""}">
+      <div class="food-day-top"><span class="tag">${item["日期"]}</span><span class="stay">${item["地点"]}</span></div>
+      <h3>${item["主题"]}</h3>
+      <p><strong>怎么吃</strong> ${item["主选"]}</p>
+      <p><strong>出片安排</strong> ${item["氛围"]}</p>
+      <p><strong>不做什么</strong> ${item["避坑"]}</p>
+    </article>
+  `).join("");
+  $("#foodCoupleGuide").innerHTML = `
+    <div class="food-visual-strip">${visuals}</div>
+    <div class="food-rules" aria-label="情侣美食原则">
+      <div class="food-rule"><strong>1 顿</strong><span>每天只设一顿主角餐</span></div>
+      <div class="food-rule"><strong>25–30 分钟</strong><span>超时就启用备选</span></div>
+      <div class="food-rule"><strong>10 分钟</strong><span>每处自然拍照上限</span></div>
+    </div>
+    <div class="food-day-rail" aria-label="按日美食和出片安排">${guide}</div>
+  `;
   const groups = data.foodMap.reduce((acc, item) => {
     const region = item["区域"] || "其他";
     acc[region] = acc[region] || [];
@@ -176,17 +204,31 @@ function renderFood() {
     return acc;
   }, {});
   $("#foodGroups").innerHTML = Object.entries(groups).map(([region, items]) => `
-    <div class="food-region">${region}</div>
-    ${items.map(item => `
-      <article class="food-card">
-        <div class="meta"><span>${item["类型"]}</span><span>${item["预算感"]}</span><span>${item["适合日期"]}</span></div>
-        <h3>${item["推荐店/吃法"]}</h3>
-        ${foodLocationLinks(item["地图店铺"] || [])}
-        <div class="field"><strong>预约/排队</strong><p>${item["预约/排队"]}</p></div>
-        <div class="field"><strong>点单</strong><p>${item["点单建议"]}</p></div>
-        <div class="field"><strong>备选</strong><p>${item["P人备选"]}</p></div>
-      </article>
-    `).join("")}
+    <section class="food-region-block">
+      <h3 class="food-region">${region}</h3>
+      <p class="food-region-note">${items.length} 个可选项 · 先看当天动线，再展开查细节</p>
+      <div class="food-region-list">
+        ${items.map((item, index) => `
+          <details class="food-card" ${index === 0 ? "open" : ""}>
+            <summary>
+              <div class="food-card-title">
+                <div>
+                  <div class="meta"><span>${item["类型"]}</span><span>${item["预算感"]}</span><span>${item["适合日期"]}</span></div>
+                  <h3>${item["推荐店/吃法"]}</h3>
+                </div>
+                <span class="food-card-chevron" aria-hidden="true">⌄</span>
+              </div>
+            </summary>
+            <div class="food-card-body">
+              ${foodLocationLinks(item["地图店铺"] || [])}
+              <div class="field"><strong>预约 / 排队</strong><p>${item["预约/排队"]}</p></div>
+              <div class="field"><strong>两人怎么点</strong><p>${item["点单建议"]}</p></div>
+              <div class="field"><strong>超时备选</strong><p>${item["P人备选"]}</p></div>
+            </div>
+          </details>
+        `).join("")}
+      </div>
+    </section>
   `).join("");
 }
 

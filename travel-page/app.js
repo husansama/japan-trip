@@ -484,7 +484,7 @@ function renderUSJ() {
 
   $("#usjGuide").innerHTML = `
     <article class="usj-hero-card">
-      <h3>9月28日执行：USJ门票＋禁忌之旅快速通1，不买速通4</h3>
+      <h3>9月27日执行：USJ门票＋禁忌之旅快速通1，不买速通4</h3>
       <p>${guide.summary["结论"]}</p>
       <p class="usj-small-note">${guide.summary["预测说明"]}</p>
       <p class="usj-small-note">当天动作：${guide.summary["当天动作"]}</p>
@@ -591,6 +591,44 @@ function renderSimpleLists() {
   )).join("");
 }
 
+function renderReview() {
+  const dimensions = [
+    ["景点含金量", "4.6", "姬路城、京都经典线、USJ与任天堂博物馆共同拉高上限"],
+    ["出片与情侣氛围", "4.6", "东山、宇治、神户港与涩谷形成四种不同的约会场景"],
+    ["互动与独特性", "4.4", "USJ手环、万圣夜和任天堂博物馆不是普通观光可替代的体验"],
+    ["美食体验", "4.3", "神户牛是主角，其余以平价、顺路和不排长队为原则"],
+    ["舒适度", "3.9", "Day4、Day6、Day8的体力压力最明显，需要执行删减项"],
+    ["交通顺路度", "4.2", "大方向顺路；神户牛的具体预约时间决定Day4能否去好古园"],
+  ];
+  const days = [
+    ["Day2 · 大阪市区", "4.0", "大阪城外观＋两次游船有轻度重复；不进天守阁，御座船和道顿堀夜船均可保留。"],
+    ["Day3 · USJ", "4.4", "互动与情侣共同满意度最高；水世界与SING只选一场，用于坐下恢复体力。"],
+    ["Day4 · 姬路＋神户", "4.3", "城堡、神户牛与港湾夜景层次丰富；神户牛若在12:30前，直接删好古园。"],
+    ["Day5 · 京都东山", "4.5", "最强传统街景与出片日；二年坂、花见小路、祇园白川不要逐段久留。"],
+    ["Day6 · 岚山＋金阁寺", "4.5", "龙安寺已删除，景观质量高且寺社密度更舒适；小火车、天龙寺、金阁寺层次清晰。"],
+    ["Day7 · 宇治＋任天堂博物馆", "4.7", "全程节奏最佳；宇治轻量游与博物馆的高互动感互补，不存在重复。"],
+    ["Day8 · 伏见稻荷＋奈良", "4.1", "景点很强但步行多；下午的春日大社外苑和奈良町二选一。"],
+    ["Day9 · 转东京＋新宿", "3.6", "换城缓冲日，少安排反而是加分；都厅仅作为涩谷SKY的免费备选。"],
+    ["Day10 · 原宿－涩谷", "4.5", "东京都市氛围与街拍核心日；涩谷SKY和东京都厅二选一，恐高可都不去。"],
+  ];
+  const groups = [
+    ["Day2", [["大阪城外观＋御座船", "3.8／3.8／3.0／4.2", "与姬路城同属城堡", "只看外观，不进天守阁"], ["中崎町", "3.5／4.2／2.5／4.5", "低", "保留一间不排队咖啡店即可"], ["梅田", "3.7／3.5／3.0／4.4", "与东京购物区部分相似", "以购物和伴手礼为主，不上高空观景"], ["道顿堀 Wonder Cruise", "3.8／4.5／3.8／4.8", "与御座船同为游船", "二选一时优先保留夜船"], ["心斋桥／道顿堀夜逛", "4.1／4.4／3.0／4.2", "低", "保留，是大阪的代表性夜景"]]],
+    ["Day3", [["超级任天堂世界", "4.9／4.8／5.0／3.5", "与任天堂博物馆互补", "早场优先马里奥赛车和手环互动"], ["哈利波特区＋禁忌之旅", "4.7／4.6／4.8／4.0", "低", "快速通用在禁忌之旅"], ["水世界／SING", "3.8／3.3／3.8／5.0", "两场演出彼此相似", "只选一场回血"], ["万圣惊魂夜", "4.6／4.4／4.8／3.0", "低", "重点是街头气氛，不追求刷完鬼屋"]]],
+    ["Day4", [["姬路城", "4.9／4.6／3.8／3.2", "与大阪城同属城堡", "本次唯一值得正式入内的城堡"], ["好古园", "3.8／4.3／2.3／4.0", "与京都庭园偏相似", "神户牛时间早就删"], ["MOURIYA 神户牛午餐", "4.7／4.4／4.5／4.8", "低", "9月28日中午已订，保留"], ["南京町", "3.4／3.7／3.4／4.5", "与道顿堀同为小吃街", "只补一两样小食"], ["美利坚公园／Harborland", "4.3／4.8／3.2／4.5", "低", "保留日落与港湾夜景"]]],
+    ["Day5", [["清水寺", "4.7／4.9／2.5／3.7", "与后续寺社轻度相似", "京都寺社中优先级最高"], ["三年坂、二年坂", "4.5／5.0／3.0／4.0", "与祇园同属传统街景", "保留，边走边拍即可"], ["八坂神社", "3.8／4.0／2.5／4.6", "与伏见、春日同属神社", "只作动线短停"], ["花见小路／祇园白川", "4.3／4.9／2.5／4.5", "与二年坂相似", "重点留给祇园白川，花见小路快走"], ["鸭川／先斗町", "3.8／4.5／2.5／4.8", "与其他夜食街部分相似", "只散步，不安排高级餐厅"]]],
+    ["Day6", [["嵯峨野小火车", "4.5／4.6／4.2／4.5", "低", "保留，是交通本身有体验感的一段"], ["岚山竹林", "3.8／4.6／2.0／4.2", "低", "控制在20–30分钟"], ["天龙寺", "4.4／4.7／2.5／4.2", "与其他庭园轻度相似", "岚山最值得入内的寺院"], ["金阁寺", "4.5／4.8／2.3／4.3", "中", "龙安寺已删除，它成为下午唯一寺社主角"]]],
+    ["Day7", [["平等院＋宇治表参道", "4.4／4.6／3.3／4.7", "与京都寺社有轻度相似", "保留抹茶与水边氛围"], ["宇治川", "3.7／4.4／2.3／5.0", "低", "轻走30–45分钟即可"], ["任天堂博物馆", "5.0／4.6／5.0／4.5", "与USJ互补", "16:30已订，必须保留"]]],
+    ["Day8", [["伏见稻荷", "4.8／5.0／3.2／3.2", "低", "清晨精华段，不登顶"], ["奈良公园＋东大寺", "4.7／4.7／4.2／3.8", "低", "鹿与大佛是奈良主线"], ["春日大社外苑", "3.9／4.3／2.3／3.5", "与其他神社相似", "下午体力足才去"], ["奈良町", "3.9／4.5／3.0／4.6", "与京都老街相似", "和春日大社二选一"]]],
+    ["Day9－Day10", [["东京都厅夜景", "3.8／4.3／2.3／4.5", "与涩谷SKY功能重复", "免费备选，恐高可跳过"], ["思出横丁", "3.8／4.2／3.0／3.8", "与道顿堀、先斗町相似", "只作轻晚餐备选"], ["明治神宫", "4.3／4.3／2.5／4.5", "与京都神社不同", "保留森林都市感"], ["原宿＋表参道", "4.3／4.8／3.5／4.5", "与梅田、心斋桥同属购物", "风格不同，保留"], ["涩谷十字路口＋PARCO", "4.5／4.8／4.2／4.4", "低", "东京都市体验核心"], ["涩谷SKY", "4.4／5.0／3.0／3.7", "与都厅高度重复", "二选一；恐高不强求"]]],
+  ];
+  const repetitions = [["城堡", "大阪城 vs 姬路城", "大阪城只保留外观与御座船；姬路城作为唯一正式入内城堡。"], ["游船", "大阪城御座船 vs 道顿堀夜船", "同是乘船但场景不同；时间不足优先道顿堀夜船。"], ["京都寺社／庭园", "好古园、天龙寺、金阁寺、平等院", "龙安寺已删除；Day4时间紧时再删除好古园，避免庭园审美疲劳。"], ["神社", "八坂、伏见稻荷、春日、明治", "八坂短停、伏见和明治保留；春日按Day8体力决定。"], ["老街", "中崎町、二年坂、祇园、奈良町", "东山是主角；祇园快走，奈良町与春日二选一。"], ["高空夜景", "东京都厅 vs 涩谷SKY", "功能重复且同行者可能恐高，最多选一处，也可都不去。"], ["任天堂", "USJ超级任天堂世界 vs 任天堂博物馆", "不重复：前者是游乐园互动，后者是历史展与室内互动，两个都保留。"]];
+
+  const dayCards = days.map(([title, score, note]) => `<article class="info-card"><div class="meta"><span>${score} / 5</span><span>${title}</span></div><p>${note}</p></article>`).join("");
+  const groupCards = groups.map(([day, spots]) => `<section class="food-group"><h3 class="food-region">${day} · 景点逐项评分</h3><div class="attraction-list">${spots.map(([name, scores, repeat, advice]) => `<article class="attraction-card"><div class="attraction-card-head"><h4>${name}</h4><span>景值／出片／互动／轻松</span></div><p><strong>评分：</strong>${scores}</p><p class="attraction-card-tip"><strong>重复判断：</strong>${repeat}</p><p class="attraction-card-tip"><strong>执行建议：</strong>${advice}</p></article>`).join("")}</div></section>`).join("");
+  const repeatCards = repetitions.map(([type, items, advice]) => `<article class="info-card"><div class="meta"><span>${type}</span><span>${items}</span></div><p>${advice}</p></article>`).join("");
+  $("#reviewGuide").innerHTML = `<article class="info-card"><p class="section-eyebrow">COUPLE TRIP REVIEW</p><h3>情侣行程多维度评分</h3><p>评分顺序为：景点价值／出片度／互动性／轻松度，均为5分制；轻松度越高代表越不累。整体游玩日评分为<strong> 4.5 / 5 </strong>，男生预估认可度4.5，女生4.6。</p><div class="detail-list">${dimensions.map(([name, score, note]) => `<div class="detail-row"><div class="tag">${name} · ${score} / 5</div><p>${note}</p></div>`).join("")}</div></article><div class="simple-list"><h3 class="food-region">每日综合判断</h3>${dayCards}</div><div class="food-groups">${groupCards}</div><div class="simple-list"><h3 class="food-region">重复体验与删减优先级</h3>${repeatCards}</div>`;
+}
+
 function switchView(view) {
   state.view = view;
   document.querySelectorAll(".tab").forEach(tab => tab.classList.toggle("is-active", tab.dataset.view === view));
@@ -601,7 +639,7 @@ function switchView(view) {
 
 function viewFromHash() {
   const requested = window.location.hash.replace("#", "");
-  const validViews = ["days", "food", "lodging", "usj", "planb", "prep"];
+  const validViews = ["days", "review", "food", "lodging", "usj", "planb", "prep"];
   return validViews.includes(requested) ? requested : "days";
 }
 
@@ -635,6 +673,7 @@ renderDays();
 renderFood();
 renderUSJ();
 renderSimpleLists();
+renderReview();
 bindEvents();
 const initialView = viewFromHash();
 switchView(initialView);

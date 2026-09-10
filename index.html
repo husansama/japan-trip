@@ -5749,17 +5749,18 @@ const state = {
 const $ = (selector) => document.querySelector(selector);
 
 const DAILY_POSTERS = [
-  ["day1-kansai-arrival.png", "Day 1 · 关西抵达日", "香港 → 关西机场 → 心斋桥"],
-  ["day2-osaka-city.png", "Day 2 · 大阪市区慢游", "大阪城 → 中崎町 → 梅田 → 道顿堀"],
-  ["day3-usj.png", "Day 3 · 主题乐园", "游戏区域 → 魔法城堡 → 夜间灯光"],
-  ["day4-kobe-watercolor.png", "Day 4 · 神户海岸线", "须磨 → 须磨浦 → 舞子 → 三宫港区"],
-  ["day5-kyoto-higashiyama.png", "Day 5 · 京都东山", "清水寺 → 祇园 → 鸭川"],
-  ["day6-arashiyama-kinkakuji.png", "Day 6 · 岚山与金阁寺", "小火车 → 竹林 → 金阁寺"],
-  ["day7-fushimi-uji-nintendo.png", "Day 7 · 伏见稻荷与宇治", "鸟居 → 抹茶 → 任天堂博物馆"],
-  ["day8-nara.png", "Day 8 · 奈良慢游", "鹿 → 东大寺 → 春日大社 → 奈良町"],
-  ["day9-tokyo-arrival.png", "Day 9 · 新干线进东京", "京都 → 新桥 → 东京铁塔"],
-  ["day10-shibuya-haneda.png", "Day 10 · 涩谷与羽田", "明治神宫 → 涩谷SKY → 羽田"],
-  ["day11-haneda-return.png", "Day 11 · 羽田返程日", "羽田 → 北京中转 → 广州"],
+  // 使用穿搭版海报展示每日行程；原图仍保存在 posters 中，便于需要时回退或对比。
+  ["day1-kansai-arrival-outfit.png", "Day 1 · 关西抵达日", "香港 → 关西机场 → 心斋桥"],
+  ["day2-osaka-city-outfit.png", "Day 2 · 大阪市区慢游", "大阪城 → 中崎町 → 梅田 → 道顿堀"],
+  ["day3-usj-outfit.png", "Day 3 · 主题乐园", "游戏区域 → 魔法城堡 → 夜间灯光"],
+  ["day4-kobe-watercolor-outfit.png", "Day 4 · 神户海岸线", "须磨 → 须磨浦 → 舞子 → 三宫港区"],
+  ["day5-kyoto-higashiyama-outfit.png", "Day 5 · 京都东山", "清水寺 → 祇园 → 鸭川"],
+  ["day6-arashiyama-kinkakuji-outfit.png", "Day 6 · 岚山与金阁寺", "小火车 → 竹林 → 金阁寺"],
+  ["day7-fushimi-uji-nintendo-outfit.png", "Day 7 · 伏见稻荷与宇治", "鸟居 → 抹茶 → 任天堂博物馆"],
+  ["day8-nara-outfit.png", "Day 8 · 奈良慢游", "鹿 → 东大寺 → 春日大社 → 奈良町"],
+  ["day9-tokyo-arrival-outfit.png", "Day 9 · 新干线进东京", "京都 → 新桥 → 东京铁塔"],
+  ["day10-shibuya-haneda-outfit.png", "Day 10 · 涩谷与羽田", "明治神宫 → 涩谷SKY → 羽田"],
+  ["day11-haneda-return-outfit.png", "Day 11 · 羽田返程日", "羽田 → 北京中转 → 广州"],
 ];
 
 function text(value) {

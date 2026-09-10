@@ -226,6 +226,55 @@ main {
   display: block;
 }
 
+.poster-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.poster-card {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+
+.poster-card:active {
+  transform: scale(0.98);
+}
+
+.poster-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background: #edf3f1;
+}
+
+.poster-card-copy {
+  padding: 10px 11px 12px;
+}
+
+.poster-card-copy strong,
+.poster-card-copy span {
+  display: block;
+}
+
+.poster-card-copy strong {
+  font-size: 15px;
+}
+
+.poster-card-copy span {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
 .section-head {
   padding: 22px 18px 10px;
 }

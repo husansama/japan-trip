@@ -40,6 +40,7 @@
 
       <div class="tabs" role="tablist" aria-label="攻略分类">
         <button class="tab is-active" data-view="days" type="button">每日</button>
+        <button class="tab" data-view="posters" type="button">每日海报</button>
         <button class="tab" data-view="review" type="button">评分参考</button>
         <button class="tab" data-view="food" type="button">美食</button>
         <button class="tab" data-view="lodging" type="button">住宿</button>
@@ -62,6 +63,15 @@
           <p>按当天体力调整，重点行程都留了删减口。</p>
         </div>
         <div class="day-list" id="dayList"></div>
+      </section>
+
+      <section class="content-view" id="postersView">
+        <div class="section-head">
+          <p class="section-eyebrow">DAILY POSTERS</p>
+          <h2>每日行程海报</h2>
+          <p>点击海报查看原图；路线图按当天真实方向绘制，实际换乘仍以 Google Maps 为准。</p>
+        </div>
+        <div class="poster-gallery" id="posterGallery"></div>
       </section>
 
       <section class="content-view" id="reviewView">

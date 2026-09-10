@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Day4 神户海岸线一日游</title>
+  <style>
+    :root { --ink:#153b68; --blue:#1e78ba; --sky:#eaf7fb; --paper:#fffaf0; --coral:#f45a5a; --gold:#f5b94c; --muted:#61758b; }
+    *{box-sizing:border-box} body{margin:0;background:#d9e6ed;font-family:"Microsoft YaHei","Noto Sans CJK SC",sans-serif;color:var(--ink)}
+    .poster{width:1080px;height:1528px;margin:0 auto;overflow:hidden;background:var(--paper);display:grid;grid-template-columns:374px 706px;box-shadow:0 12px 35px #29435855}
+    .left{padding:46px 30px 28px;background:linear-gradient(180deg,#fcf7e8 0%,#f4fbfb 100%);border-right:3px solid #d7e7e7;position:relative}
+    .ribbon{display:inline-block;background:var(--ink);color:#fff;border-radius:18px 18px 18px 2px;padding:9px 18px;font-size:28px;font-family:Georgia,serif;font-weight:bold;letter-spacing:1px}
+    .date{font-size:22px;font-weight:700;margin-left:12px}.title{font-size:42px;line-height:1.24;font-weight:900;letter-spacing:1px;margin:21px 0 10px}.sub{font-size:18px;color:#55718c;line-height:1.65;border-bottom:2px dashed #b8d4d8;padding-bottom:20px}
+    .timeline{margin:25px 0 0;padding:0;list-style:none;border-left:4px solid #2e95b5}.timeline li{position:relative;padding:0 0 18px 25px}.timeline li:before{content:"";position:absolute;left:-11px;top:5px;width:17px;height:17px;background:#fff;border:4px solid #2e95b5;border-radius:50%}.time{font-size:18px;font-weight:900;color:#0c5890}.event{font-size:19px;font-weight:800;margin:3px 0}.detail{font-size:15px;color:#516c81;line-height:1.45}.tag{display:inline-block;margin-top:4px;background:#dff5e9;color:#23855d;border-radius:11px;padding:2px 8px;font-size:13px;font-weight:700}
+    .card{background:#fff;border:1px solid #d3e4e2;border-radius:16px;padding:15px 17px;margin-top:16px;box-shadow:0 4px 12px #59747b18}.card h3{font-size:20px;margin:0 0 9px}.card p,.card li{font-size:14px;line-height:1.6;color:#435f78;margin:0}.card ul{margin:4px 0 0;padding-left:19px}.pass{background:#edf8ff;border-color:#b4ddef}.pass strong{font-size:20px;color:#09659c}.map{position:relative;background:linear-gradient(180deg,#cfeff7 0%,#effaf1 46%,#c3e5f2 46%,#c7e7f1 100%);overflow:hidden}
+    .map-head{position:absolute;z-index:3;left:32px;right:32px;top:34px;background:#fffdf7e8;border:2px solid #e4d7b5;border-radius:18px;padding:13px 18px;box-shadow:0 4px 10px #47717c25}.map-head h2{font-size:30px;margin:0 0 4px;text-align:center}.map-head p{margin:0;text-align:center;color:#52718a;font-size:15px}.legend{position:absolute;z-index:3;right:31px;bottom:26px;background:#fffdf7e8;border-radius:13px;padding:10px 13px;font-size:13px;color:#46647c}.legend i{display:inline-block;width:25px;border-top:4px dashed #1976bb;vertical-align:middle;margin-right:4px}.map svg{width:100%;height:100%;display:block}.pin{fill:#f45454;stroke:#fff;stroke-width:4}.pin-text{fill:#fff;font-size:17px;font-weight:900;text-anchor:middle;dominant-baseline:central}.place-box{fill:#fffdf6;stroke:#d1e0dc;stroke-width:2}.place-name{fill:#153b68;font-size:18px;font-weight:900}.place-note{fill:#55728a;font-size:13px}.water{fill:#78bdd5;opacity:.74}.land{fill:#dceccf}.road{fill:none;stroke:#fff6d8;stroke-width:11;opacity:.9}.coast{fill:none;stroke:#6195ab;stroke-width:3}.route{fill:none;stroke:#1976bb;stroke-width:6;stroke-linecap:round;stroke-dasharray:12 11}.train{fill:#fff;stroke:#1976bb;stroke-width:3}.small{fill:#54738a;font-size:13px;font-weight:700}.city{fill:#34627f;font-size:25px;font-weight:900;letter-spacing:3px}.north{fill:#153b68;font-size:14px;font-weight:900}.sun{fill:#ffc65b}.mount{fill:#9fc88e}.night{fill:#1d527d}.callout{fill:#fff8e7;stroke:#e9ce8c;stroke-width:2}.callout-text{fill:#765b2c;font-size:14px;font-weight:800}
+    @media print {body{background:#fff}.poster{box-shadow:none;margin:0}}
+  </style>
+</head>
+<body>
+  <main class="poster">
+    <section class="left">
+      <div><span class="ribbon">Day 4</span><span class="date">9/28（周一）</span></div>
+      <h1 class="title">神户海岸线<br>一日游</h1>
+      <p class="sub">虎鲸表演 · 昭和复古缆车 · 明石海峡日落 · 神户牛与港湾夜景</p>
+      <ol class="timeline">
+        <li><div class="time">08:45</div><div class="event">大阪酒店出发</div><div class="detail">心斋桥→大阪站→JR须磨海滨公园</div></li>
+        <li><div class="time">10:30–12:05</div><div class="event">须磨海洋世界</div><div class="detail">入园后锁定 11:00、11:45 两场表演</div></li>
+        <li><div class="time">12:05–13:40</div><div class="event">园内快餐＋主馆精华</div><div class="detail">WHARF 快速午餐；13:40 必须离园</div></li>
+        <li><div class="time">14:10–15:40</div><div class="event">须磨浦山上游园 A线</div><div class="detail">缆车→卡乐达→回转展望阁→观光吊椅</div><span class="tag">普通周游券第2项</span></li>
+        <li><div class="time">16:00–18:00</div><div class="event">舞子海上步道＋日落</div><div class="detail">16:00 桥内／8楼拍照；17:05 海边等日落</div><span class="tag">日落约 17:48</span></li>
+        <li><div class="time">19:15–20:45</div><div class="event">MOURIYA 神户牛晚餐</div><div class="detail">三宫店／本店以最终预约门店为准</div></li>
+        <li><div class="time">20:45–23:10</div><div class="event">美利坚公园→Harborland</div><div class="detail">港塔、BE KOBE、Mosaic 外景后返大阪</div></li>
+      </ol>
+      <aside class="card pass"><h3>普通关西乐享周游券</h3><p><strong>须磨浦 A线 ¥2,100</strong><br>缆车、卡乐达、回转展望阁、观光吊椅。</p></aside>
+      <aside class="card"><h3>执行提醒</h3><ul><li>若 14:20 后才开始须磨浦，改 B线。</li><li>舞子步道 45 分钟足够，日落在海边拍。</li><li>晚餐拖延时，只保留美利坚公园夜拍。</li></ul></aside>
+    </section>
+    <section class="map" aria-label="按真实相对坐标绘制的Day4神户路线图">
+      <div class="map-head"><h2>神户西海岸 → 市中心路线图</h2><p>示意图按真实经纬度相对位置绘制；西在左、东在右</p></div>
+      <svg viewBox="0 0 706 1528" role="img" aria-label="须磨海洋世界到须磨浦、舞子、三宫、美利坚公园、Harborland的正确相对路线">
+        <path class="water" d="M0 780 C130 716 184 767 270 728 C363 686 506 754 706 669 L706 1528 L0 1528Z"/>
+        <path class="land" d="M0 177 L706 177 L706 669 C594 711 514 686 416 728 C302 778 225 738 134 787 C74 818 28 812 0 830Z"/>
+        <path class="mount" d="M0 230 Q82 169 154 239 Q230 171 300 252 Q385 183 472 243 Q575 163 706 225 L706 300 L0 300Z"/>
+        <path class="road" d="M50 876 C160 846 233 806 335 808 C463 811 539 738 646 515"/>
+        <path class="road" d="M125 798 C270 748 381 696 541 537"/>
+        <path class="coast" d="M0 830 C75 801 95 816 140 786 C228 728 304 777 416 728 C516 684 606 714 706 668"/>
+        <text x="82" y="409" class="city">须磨区</text><text x="458" y="351" class="city">神户市中心</text><text x="91" y="1020" class="city">大阪湾</text>
+        <circle cx="475" cy="830" r="44" class="sun" opacity=".9"/><path d="M0 856 C135 830 248 840 388 808 C512 781 616 756 706 735" fill="none" stroke="#fff7d2" stroke-width="4" opacity=".75"/>
+        <!-- 经纬度相对位置：须磨海洋世界(34.64393,135.12787)、须磨浦(34.64192,135.09447)、舞子(34.63012,135.03293)、三宫约(34.693,135.195)、港区约(34.68,135.18) -->
+        <path class="route" d="M405 790 L301 810 L104 932 C189 900 325 835 605 432 C573 514 550 548 523 578 L492 610"/>
+        <g transform="translate(347 807)"><rect class="train" x="-14" y="-9" width="28" height="18" rx="4"/><path d="M-6 5H6M-7-3H-1M2-3H8" stroke="#1976bb" stroke-width="2"/></g>
+        <g transform="translate(210 875)"><rect class="train" x="-14" y="-9" width="28" height="18" rx="4"/><path d="M-6 5H6M-7-3H-1M2-3H8" stroke="#1976bb" stroke-width="2"/></g>
+        <g transform="translate(480 608)"><rect class="train" x="-14" y="-9" width="28" height="18" rx="4"/><path d="M-6 5H6M-7-3H-1M2-3H8" stroke="#1976bb" stroke-width="2"/></g>
+        <g transform="translate(554 520)"><rect class="train" x="-14" y="-9" width="28" height="18" rx="4"/><path d="M-6 5H6M-7-3H-1M2-3H8" stroke="#1976bb" stroke-width="2"/></g>
+        <g><circle class="pin" cx="405" cy="790" r="19"/><text class="pin-text" x="405" y="790">1</text><rect class="place-box" x="426" y="754" width="220" height="66" rx="12"/><text class="place-name" x="441" y="780">须磨海洋世界</text><text class="place-note" x="441" y="804">10:30入园 · 两场表演</text></g>
+        <g><circle class="pin" cx="301" cy="810" r="19"/><text class="pin-text" x="301" y="810">2</text><rect class="place-box" x="110" y="751" width="172" height="62" rx="12"/><text class="place-name" x="124" y="776">须磨浦 A线</text><text class="place-note" x="124" y="798">14:10–15:40</text></g>
+        <g><circle class="pin" cx="104" cy="932" r="19"/><text class="pin-text" x="104" y="932">3</text><rect class="place-box" x="121" y="895" width="207" height="70" rx="12"/><text class="place-name" x="136" y="921">舞子海上步道</text><text class="place-note" x="136" y="945">16:00拍桥 · 17:48日落</text></g>
+        <path d="M47 895 L98 874 L147 895" fill="none" stroke="#345e88" stroke-width="8"/><path d="M60 896 L60 929 M132 896 L132 929" stroke="#345e88" stroke-width="5"/><text x="23" y="865" class="small">明石海峡大桥</text>
+        <g><circle class="pin" cx="605" cy="432" r="19"/><text class="pin-text" x="605" y="432">4</text><rect class="place-box" x="387" y="347" width="196" height="68" rx="12"/><text class="place-name" x="402" y="374">三宫 MOURIYA</text><text class="place-note" x="402" y="397">19:15 神户牛晚餐</text></g>
+        <g><circle class="pin" cx="523" cy="578" r="19"/><text class="pin-text" x="523" y="578">5</text><rect class="place-box" x="334" y="588" width="173" height="63" rx="12"/><text class="place-name" x="348" y="614">美利坚公园</text><text class="place-note" x="348" y="637">港塔／BE KOBE</text></g>
+        <g><circle class="pin" cx="492" cy="610" r="19"/><text class="pin-text" x="492" y="610">6</text><rect class="place-box" x="505" y="628" width="162" height="61" rx="12"/><text class="place-name" x="519" y="654">Harborland</text><text class="place-note" x="519" y="677">Mosaic 夜景</text></g>
+        <path d="M435 615 L435 541 L451 524 L467 541 L467 615Z" fill="#d75547"/><path d="M441 548H461M441 565H461M441 582H461" stroke="#fff3cf" stroke-width="3"/><text x="395" y="639" class="small">神户港塔</text>
+        <circle cx="618" cy="682" r="39" fill="none" stroke="#f4a350" stroke-width="5"/><path d="M579 682H657M618 643V721M590 654L646 710M646 654L590 710" stroke="#f4a350" stroke-width="3"/>
+        <path d="M677 304 C661 383 615 480 510 554" fill="none" stroke="#153b68" stroke-width="4" marker-end="url(#arrow)"/><text x="546" y="287" class="callout-text">大阪方向（东）</text>
+        <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#153b68"/></marker></defs>
+        <g transform="translate(649 89)"><text x="0" y="0" class="north">N</text><path d="M6 10 L-3 35 L6 29 L15 35 Z" fill="#153b68"/></g>
+        <rect class="callout" x="34" y="1121" width="289" height="83" rx="16"/><text class="callout-text" x="55" y="1152">正确方向：上午从大阪向西进须磨，</text><text class="callout-text" x="55" y="1178">日落后再向东回三宫与港区。</text>
+      </svg>
+      <div class="legend"><i></i>公共交通主路线<br>地图为相对位置示意，不替代导航</div>
+    </section>
+  </main>
+</body>
+</html>

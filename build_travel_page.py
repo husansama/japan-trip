@@ -370,7 +370,7 @@ DAY_DETAIL_OVERRIDES: dict[str, list[dict[str, str]]] = {
     ],
     "Day2": [
         day_detail("09-26", "08:45–11:45", "酒店步行到长堀桥→森之宫→09:30先买大阪城御座船当日票→城郭外观／御座船→西之丸庭园秋季櫓特别公开", "御座船满位则保留櫓特别公开；不进天守阁", "9月26日正好可看多门櫓与千贯櫓内部，和御座船共同补足大阪城的体验深度，不只是城外拍照。", "御座船9月约10:00–16:30发船，混杂日票可能提前售罄；櫓特别公开10:00–16:30，最后入场16:00，成人共通券¥900。"),
-        day_detail("09-26", "11:45–14:00", "大阪城→中崎町：午餐→街区慢走→选一间不排队咖啡馆", "不爱旧街／咖啡就直去梅田，多留给购物", "中崎町只留75分钟，不再把四小时塞给小街区；午餐和短休息合计约2小时15分钟更舒适。", "咖啡店排队超过20分钟就换店；春驹周六队伍超过30分钟直接放弃。"),
+        day_detail("09-26", "11:45–14:00", "大阪城→中崎町短走／咖啡→12:45–13:00到鱼心梅田店吃寿司午餐→接梅田购物", "订到中崎町的鲜・料理 あお山才把寿司午餐留在中崎町；不爱旧街／咖啡就直去梅田", "中崎町只留短走与咖啡，寿司放到下午本来就要去的梅田，不产生折返且更容易订位。", "鱼心11:00开门，建议先预约；春驹周六队伍超过30分钟直接放弃。"),
         day_detail("09-26", "14:00–17:50", "步行至梅田→KITTE大阪／Grand Front／阪神百货选一两处购物与伴手礼→16:50后乘御堂筋线去心斋桥", "累了只逛KITTE或阪神百货地下，不登高空观景", "把最可弹性压缩的购物放在下午；同行者不需要为了‘夜景’勉强上梅田高处。", "梅田地下街复杂，集合点约在JR大阪站中央口或Grand Front南馆；17:50前离开可从容赶晚间预约。"),
         day_detail("09-26", "18:10–19:15", "心斋桥筋南下→戎桥、固力果与道顿堀河岸蓝调拍照→法善寺横丁附近晚餐", "遇雨或太累，直接选心斋桥站附近晚餐", "把街景拍摄放在天色刚暗，不再为游船硬卡时间；普通周游券名额留给Day4须磨浦A线。", "道顿堀游船为自费备选：若当晚体力和天气都好，可预约19:30或20:00班，成人¥900。"),
         day_detail("09-26", "19:30后", "法善寺横丁／道顿堀大阪烧晚餐→河畔散步→沿心斋桥筋步行回酒店", "想增加体验时自费坐道顿堀水上观光船", "保留大阪夜景与美食主线，游船不再占用宝贵的普通周游券名额。", "游船通常11:00–21:00每30分钟；晚餐美津の排队超40分钟即换味乃家或千房。"),
@@ -444,9 +444,9 @@ DAY_FOOD_OVERRIDES: dict[str, dict[str, str]] = {
         "P人吃法": "抵达日晚餐不预约；入境或接机延误就直接选酒店附近仍营业的店，第一晚不为大阪烧打卡绕路。",
     },
     "Day2": {
-        "午餐": "中崎町先选轻午餐或咖啡简餐；想吃正餐则到梅田阪神百货地下美食区／KITTE Osaka，别为春驹等超过30分钟。",
+        "午餐": "寿司主选改为鱼心梅田店：建议订12:45–13:00，10贯午间寿司约¥1,000、12贯约¥1,400；中崎町只留短走和咖啡。想在中崎町吃则提前电话订鲜・料理 あお山。",
         "晚餐": "道顿堀主餐：美津の大阪烧（两人点美津乃烧＋山芋烧分食）；排队超40分钟即换味乃家或千房。",
-        "P人吃法": "章鱼烧只作为两人分食小吃，别在晚饭前吃饱；Rikuro老爷爷芝士蛋糕可回酒店前打包。",
+        "P人吃法": "御座船若09:40前确认满位，就直接保留櫓＋西之丸庭园，午餐仍按寿司方案执行；章鱼烧只作两人分食小吃，别在晚饭前吃饱。",
     },
     "Day3": {
         "午餐": "MOURIYA三宫店神户牛午餐已预约；从大阪直接前往，按TableCheck确认页时间抵店，不再绕行姬路。",
@@ -834,6 +834,43 @@ EXTRA_FOOD_RECOMMENDATIONS: list[dict[str, object]] = [
     },
 ]
 
+# Day2寿司午餐与既有“春驹现场备选”并列展示：前者可订位且与梅田购物动线一致，不把午餐变成排队任务。
+DAY2_SUSHI_ADDITIONS: list[dict[str, object]] = [
+    {
+        "区域": "大阪梅田",
+        "类型": "寿司午餐·主选",
+        "推荐店/吃法": "鱼心梅田店：大份握寿司午餐，适合从中崎町短走后直接接梅田购物",
+        "适合日期": "Day2",
+        "预算感": "低-中（10贯约¥1,000／12贯约¥1,400）",
+        "预约/排队": "每日11:00起营业，可网络预约；建议预约12:45–13:00，周六不要现场硬等。",
+        "点单建议": "两人各点10贯或12贯午间套餐；食量大的一方可选ぶっちぎり定食，再共点一份赤出汁。",
+        "P人备选": "订满或临时晚到就进KITTE Osaka／阪神百货餐饮层；春驹排队超过30分钟同样直接放弃。",
+        "地图店铺": [food_pin("鱼心梅田店", "Ganso Bucchigiri Sushi Uoshin Umeda")],
+    },
+    {
+        "区域": "大阪中崎町",
+        "类型": "寿司割烹·预约选",
+        "推荐店/吃法": "鲜・料理 あお山：中崎町站旁的安静寿司割烹，想把午餐留在老街时再选",
+        "适合日期": "Day2",
+        "预算感": "中-高",
+        "预约/排队": "午餐预约以电话为主；仅在提前订到时采用，未订到不临场碰运气。",
+        "点单建议": "按当日午餐／握寿司套餐点即可，留出饭后30–40分钟逛街，不再另找咖啡正餐。",
+        "P人备选": "未订到就维持中崎町短走，12:45转去鱼心梅田店；不需要在小街区逐家问位。",
+        "地图店铺": [food_pin("鲜・料理 あお山", "Sushi Oryori Aoyama Nakazakicho Osaka")],
+    },
+    {
+        "区域": "大阪梅田",
+        "类型": "江户前寿司·正式午餐",
+        "推荐店/吃法": "寿し あや瀬：Grand Front大阪南馆8F的正式江户前寿司，适合想把Day2午餐升级为一顿主角餐",
+        "适合日期": "Day2",
+        "预算感": "高（午餐约¥6,000–7,999/人）",
+        "预约/排队": "建议提前预约并预留约90分钟；选它就将中崎町压缩为短走或删去。",
+        "点单建议": "直接选午间握寿司套餐；当天晚餐仍吃大阪烧，不再追加第二顿高价海鲜。",
+        "P人备选": "若无合适时段或预算不想拉高，回到鱼心午餐即可，下午购物不受影响。",
+        "地图店铺": [food_pin("寿し あや瀬", "Sushi Ayase Grand Front Osaka")],
+    },
+]
+
 # 与每天动线直接对应的加选店：不替代主餐，现场按排队、预算和胃口决定。
 ROUTE_FOOD_ADDITIONS: list[dict[str, object]] = [
     {
@@ -920,6 +957,53 @@ COUPLE_FOOD_GUIDE: list[dict[str, str]] = [
 FOOD_VISUALS = [
     {"城市": "大阪", "标题": "夜食与霓虹", "说明": "道顿堀蓝调时刻，主食留给大阪烧。", "图片": "./assets/food-osaka-date.png"},
     {"城市": "京都", "标题": "抹茶与町屋", "说明": "甜品只选一份，把仪式感留给晚餐。", "图片": "./assets/food-kyoto-date.png"},
+]
+
+# 把已经确定的餐饮决策、临场备选与找店工具集中放在美食页顶部，避免用户临行时在多个日期卡片之间来回翻找。
+FOOD_PLANNING_GUIDE = [
+    {
+        "标签": "DAY2 · 大阪寿司午餐",
+        "标题": "中崎町短走，把寿司正餐放到梅田",
+        "说明": "首选鱼心梅田店：12:45–13:00入店，吃45–60分钟后直接接KITTE／Grand Front／阪神百货；10贯午间寿司约¥1,000，12贯约¥1,400。",
+        "要点": [
+            "想吃安静的寿司割烹：中崎町「鲜・料理 あお山」，午餐需电话预约；订到才把午餐留在中崎町。",
+            "想吃一顿正式江户前寿司：Grand Front南馆8F「寿し あや瀬」，午餐约¥6,000–7,999/人，建议预订并把中崎町缩为短走。",
+            "春驹只作现场备选；周六排队超过30分钟，直接执行鱼心或百货餐厅，不用为寿司打乱下午。",
+        ],
+        "链接": [
+            {"名称": "鱼心梅田店", "地址": "https://uoshin-umeda.owst.jp/"},
+            {"名称": "あお山", "地址": "https://www.sushi-oryori-aoyama.com/shops/nakazakicho/index.html"},
+        ],
+    },
+    {
+        "标签": "DAY2 · 御座船售罄",
+        "标题": "不硬找替代船，保留櫓＋西之丸庭园",
+        "说明": "09:25先换御座船当日票；若09:40前确认满位，就改大手门、护城河与天守阁外观拍照，10:00进入多闻橹、千贯橹与西之丸庭园，11:30前离开前往中崎町。",
+        "要点": [
+            "9月26日为秋季櫓特别公开期，櫓＋西之丸庭园共通票¥900；预留60–75分钟即可，不必再进天守阁。",
+            "特别想坐船才自费改Aqua Liner：约55分钟且会压缩中崎町，必须先查当天班次与余位；它不是本日首选。",
+            "櫓内部有较窄、较陡的木楼梯，穿运动鞋即可；不属于刺激项目，但不建议高跟鞋或拖鞋。",
+        ],
+        "链接": [
+            {"名称": "大阪城櫓特别公开", "地址": "https://www.city.osaka.lg.jp/keizaisenryaku/page/0000667742.html"},
+            {"名称": "大阪水上巴士", "地址": "https://suijo-bus.osaka/"},
+        ],
+    },
+    {
+        "标签": "日本找店／订位工具",
+        "标题": "查口碑、看营业、订座的三件套",
+        "说明": "食べログ找候选，Google Maps确认路线与近期评价，热门店再用预约平台锁位；网页无法安装时直接用Safari打开即可。",
+        "要点": [
+            "食べログ（Tabelog）：用日文店名搜，3.4分以上再结合近三个月评价；可按日期、人数筛可网络预约的店。",
+            "TableCheck：订神户牛、寿司等热门餐厅；部分店需信用卡担保或预授权，使用持Visa的同行人信息操作。",
+            "Hot Pepper Gourmet：适合大阪居酒屋、普通正餐与优惠券；日文界面可用浏览器翻译，许多店能即时确认预约。",
+        ],
+        "链接": [
+            {"名称": "食べログ", "地址": "https://tabelog.com/"},
+            {"名称": "TableCheck", "地址": "https://www.tablecheck.com/ja/japan"},
+            {"名称": "Hot Pepper Gourmet", "地址": "https://www.hotpepper.jp/"},
+        ],
+    },
 ]
 
 # 10月5日改为清晨从羽田经北京返穗；美食页不再把旧工作簿的东京自由日、镰仓日或10月6日误显示为本次可用日期。
@@ -2360,6 +2444,7 @@ def build_data() -> dict[str, object]:
         key = (item.get("区域", ""), item.get("类型", ""))
         item["地图店铺"] = FOOD_LOCATIONS.get(key, [])
     food_map.extend(EXTRA_FOOD_RECOMMENDATIONS)
+    food_map.extend(DAY2_SUSHI_ADDITIONS)
     food_map.extend(ROUTE_FOOD_ADDITIONS)
     for item in food_map:
         item["适合日期"] = FOOD_DAY_REMAP.get(item.get("适合日期", ""), item.get("适合日期", ""))
@@ -2421,6 +2506,7 @@ def build_data() -> dict[str, object]:
         "foodMap": food_map,
         "coupleFoodGuide": COUPLE_FOOD_GUIDE,
         "foodVisuals": FOOD_VISUALS,
+        "foodPlanningGuide": FOOD_PLANNING_GUIDE,
         "lodging": lodging,
         "alternatives": alternatives,
         "transport": transport,
@@ -2528,6 +2614,7 @@ def write_site(data: dict[str, object]) -> None:
           <h2>两个人的美食与出片计划</h2>
           <p>先按当天动线决定吃什么，再按地区挑店。每晚只留一顿主角餐，排队超过阈值就切换备选。</p>
         </div>
+        <div class="food-planning-guide" id="foodPlanningGuide"></div>
         <div class="food-couple-guide" id="foodCoupleGuide"></div>
         <div class="food-directory-head">
           <div>
@@ -3150,6 +3237,77 @@ main {
   display: grid;
   gap: 14px;
   padding: 0 14px 22px;
+}
+
+.food-planning-guide {
+  display: grid;
+  gap: 12px;
+  padding: 0 14px 18px;
+}
+
+.food-planning-card {
+  background: linear-gradient(135deg, #fffdf7 0%, #f5fbf8 100%);
+  border: 1px solid #cfe1d9;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 15px;
+}
+
+.food-planning-card h3 {
+  margin: 8px 0;
+  color: var(--green);
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.food-planning-card > p {
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.food-planning-points {
+  display: grid;
+  gap: 7px;
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.food-planning-points li {
+  position: relative;
+  padding-left: 15px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.food-planning-points li::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+.food-planning-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.food-planning-links a {
+  border-radius: 999px;
+  padding: 6px 9px;
+  background: #fff;
+  border: 1px solid #b7d8ca;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
 }
 
 .food-visual-strip {
@@ -4318,6 +4476,20 @@ function foodLocationLinks(locations) {
 }
 
 function renderFood() {
+  const planningGuide = (data.foodPlanningGuide || []).map(item => `
+    <article class="food-planning-card">
+      <span class="tag">${item["标签"]}</span>
+      <h3>${item["标题"]}</h3>
+      <p>${item["说明"]}</p>
+      <ul class="food-planning-points">
+        ${(item["要点"] || []).map(point => `<li>${point}</li>`).join("")}
+      </ul>
+      <div class="food-planning-links">
+        ${(item["链接"] || []).map(link => `<a href="${link["地址"]}" target="_blank" rel="noopener noreferrer">${link["名称"]} ↗</a>`).join("")}
+      </div>
+    </article>
+  `).join("");
+  $("#foodPlanningGuide").innerHTML = planningGuide;
   const visuals = (data.foodVisuals || []).map(item => `
     <article class="food-visual">
       <img src="${item["图片"]}" alt="${item["城市"]}${item["标题"]}氛围图" loading="lazy" />

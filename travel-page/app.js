@@ -202,6 +202,20 @@ function foodLocationLinks(locations) {
 }
 
 function renderFood() {
+  const planningGuide = (data.foodPlanningGuide || []).map(item => `
+    <article class="food-planning-card">
+      <span class="tag">${item["标签"]}</span>
+      <h3>${item["标题"]}</h3>
+      <p>${item["说明"]}</p>
+      <ul class="food-planning-points">
+        ${(item["要点"] || []).map(point => `<li>${point}</li>`).join("")}
+      </ul>
+      <div class="food-planning-links">
+        ${(item["链接"] || []).map(link => `<a href="${link["地址"]}" target="_blank" rel="noopener noreferrer">${link["名称"]} ↗</a>`).join("")}
+      </div>
+    </article>
+  `).join("");
+  $("#foodPlanningGuide").innerHTML = planningGuide;
   const visuals = (data.foodVisuals || []).map(item => `
     <article class="food-visual">
       <img src="${item["图片"]}" alt="${item["城市"]}${item["标题"]}氛围图" loading="lazy" />

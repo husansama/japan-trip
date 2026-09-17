@@ -525,13 +525,44 @@ function renderUSJ() {
     </article>
   `).join("");
 
+  const priorityPlan = guide.priority_plan;
+  const priorityTicketActions = priorityPlan["票券动作"].map(item => `<li>${item}</li>`).join("");
+  const priorityTimeline = priorityPlan["时间线"].map(item => `
+    <article class="usj-priority-step">
+      <time>${item["时间"]}</time>
+      <p>${item["安排"]}</p>
+      <p><strong>执行重点：</strong>${item["重点"]}</p>
+    </article>
+  `).join("");
+  const prioritySingleRider = priorityPlan["单人空档"].map(item => `<li>${item}</li>`).join("");
+
   const sources = guide.sources.map(item => `
     <a class="usj-source-link" href="${item["网址"]}" target="_blank" rel="noopener noreferrer">${item["名称"]}</a>
   `).join("");
 
   $("#usjGuide").innerHTML = `
+    <article class="usj-priority-card">
+      <div class="usj-priority-head">
+        <span class="usj-priority-kicker">当天先按这张卡执行</span>
+        <h3>${priorityPlan["标题"]}</h3>
+        <p>${priorityPlan["副标题"]}</p>
+      </div>
+      <div class="usj-priority-block">
+        <h4>票券先后顺序</h4>
+        <ul class="usj-priority-list">${priorityTicketActions}</ul>
+      </div>
+      <div class="usj-priority-block">
+        <h4>从早到晚的决策路线</h4>
+        <div class="usj-priority-timeline">${priorityTimeline}</div>
+      </div>
+      <div class="usj-priority-block">
+        <h4>男生单人通道空档</h4>
+        <ul class="usj-priority-list">${prioritySingleRider}</ul>
+      </div>
+    </article>
+
     <article class="usj-hero-card">
-      <h3>9月27日执行：USJ门票＋禁忌之旅快速通1，不买速通4</h3>
+      <h3>基础信息与实时排队参考</h3>
       <p>${guide.summary["结论"]}</p>
       <p class="usj-small-note">${guide.summary["预测说明"]}</p>
       <p class="usj-small-note">当天动作：${guide.summary["当天动作"]}</p>
